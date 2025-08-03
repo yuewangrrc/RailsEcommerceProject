@@ -1,0 +1,112 @@
+<% content_for :title, "Shopping Cart" %>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="mb-4">Shopping Cart</h1>
+      
+      <% if @cart_items.any? %>
+        <div class="card">
+          <div class="card-body">
+            <% @cart_items.each do |item| %>
+              <div class="row align-items-center border-bottom py-3">
+                <div class="col-md-2">
+                  <img src="<%= item[:product].image_url %>" 
+                       alt="<%= item[:product].name %>" 
+                       class="img-fluid rounded" 
+                       style="max-height: 80px;">
+                </div>
+                
+                <div class="col-md-4">
+                  <h5 class="mb-1"><%= item[:product].name %></h5>
+                  <p class="text-muted mb-1">Size: <%= item[:product].size %></p>
+                  <p class="text-muted mb-0">Price: $<%= item[:product].price %></p>
+                </div>
+                
+                <div class="col-md-3">
+                  <%= form_with url: update_cart_item_path(item[:product].id), method: :patch, 
+                      local: true, class: "d-flex align-items-center" do |f| %>
+                    <%= f.number_field :quantity, 
+                        value: item[:quantity], 
+                        min: 1, 
+                        max: item[:product].stock,
+                        class: "form-control form-control-sm me-2", 
+                        style: "width: 70px;" %>
+                    <%= f.submit "Update", class: "btn btn-outline-primary btn-sm" %>
+                  <% end %>
+                </div>
+                
+                <div class="col-md-2">
+                  <strong>$<%= sprintf("%.2f", item[:total_price]) %></strong>
+                </div>
+                
+                <div class="col-md-1">
+                  <%= link_to remove_from_cart_path(item[:product].id), 
+                      method: :delete, 
+                      class: "btn btn-outline-danger btn-sm",
+                      confirm: "Remove this item from cart?" do %>
+                    <i class="fas fa-trash"></i>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <%= link_to "Clear Cart", clear_cart_path, 
+                  method: :delete, 
+                  class: "btn btn-outline-secondary",
+                  confirm: "Clear entire cart?" %>
+              <%= link_to "Continue Shopping", products_path, class: "btn btn-outline-primary" %>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="text-center py-5">
+          <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+          <h3>Your cart is empty</h3>
+          <p class="text-muted">Add some products to get started!</p>
+          <%= link_to "Shop Now", products_path, class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+    
+    <% if @cart_items.any? %>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">Order Summary</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between mb-2">
+              <span>Items (<%= @cart_items.sum { |item| item[:quantity] } %>):</span>
+              <span>$<%= sprintf("%.2f", @total_price) %></span>
+            </div>
+            
+            <div class="d-flex justify-content-between mb-2">
+              <span>Shipping:</span>
+              <span>Free</span>
+            </div>
+            
+            <hr>
+            
+            <div class="d-flex justify-content-between mb-3">
+              <strong>Total:</strong>
+              <strong>$<%= sprintf("%.2f", @total_price) %></strong>
+            </div>
+            
+            <% if user_signed_in? %>
+              <%= link_to "Proceed to Checkout", "#", 
+                  class: "btn btn-primary w-100 mb-2" %>
+            <% else %>
+              <%= link_to "Sign In to Checkout", new_user_session_path, 
+                  class: "btn btn-primary w-100 mb-2" %>
+            <% end %>
+            
+            <%= link_to "Continue Shopping", products_path, 
+                class: "btn btn-outline-secondary w-100" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

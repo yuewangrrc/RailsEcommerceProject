@@ -7,6 +7,13 @@ Rails.application.routes.draw do
   # Home routes
   get "about", to: "home#about"
   
+  # Cart routes
+  get "cart", to: "cart#show"
+  post "cart/add/:product_id", to: "cart#add_item", as: "add_to_cart"
+  patch "cart/update/:product_id", to: "cart#update_item", as: "update_cart_item"
+  delete "cart/remove/:product_id", to: "cart#remove_item", as: "remove_from_cart"
+  delete "cart/clear", to: "cart#clear", as: "clear_cart"
+  
   # Admin routes
   namespace :admin do
     root "dashboard#index"

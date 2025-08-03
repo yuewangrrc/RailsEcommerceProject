@@ -53,6 +53,17 @@
           
           <ul class="navbar-nav">
             <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to cart_path, class: "nav-link" do %>
+                  <i class="fas fa-shopping-cart"></i>
+                  Cart
+                  <% if session[:cart] && session[:cart].any? %>
+                    <span class="badge bg-primary">
+                      <%= session[:cart].values.sum %>
+                    </span>
+                  <% end %>
+                <% end %>
+              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                   <%= current_user.name %>
