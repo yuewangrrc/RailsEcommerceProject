@@ -22,7 +22,11 @@ Rails.application.routes.draw do
   # Admin routes
   namespace :admin do
     root "dashboard#index"
-    resources :products
+    resources :products do
+      collection do
+        patch :bulk_update
+      end
+    end
     resources :categories
   end
   
