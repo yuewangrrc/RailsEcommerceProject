@@ -17884,3 +17884,42 @@ Processing by Devise::SessionsController#new as TURBO_STREAM
 Completed 200 OK in 269ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@swimi.com' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'admin@swimi.com' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Admin' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'admin@swimi.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Admin', 'admin@swimi.com', '$2a$12$MlK5S8dAKxVYP/cMLKau.O83ZL1VD/gtwi/BMFi4oQL9zfM97aJDO', NULL, NULL, NULL, '2025-08-03 22:34:51.729554', '2025-08-03 22:34:51.729554', 1, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Count (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*application='RailsProject'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 5 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 136 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 136 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 136 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:66:in `primary_image'
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 136 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:66:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 137 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 137 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 137 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:66:in `primary_image'
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 137 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:66:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 138 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 138 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 138 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:66:in `primary_image'
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 138 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:66:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 139 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 139 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 139 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:66:in `primary_image'
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 139 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:66:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 140 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 140 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 140 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:66:in `primary_image'
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 140 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:66:in `primary_image'

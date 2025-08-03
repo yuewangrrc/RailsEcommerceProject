@@ -70,7 +70,7 @@ class Product < ApplicationRecord
     if primary_image.present?
       Rails.application.routes.url_helpers.rails_blob_url(primary_image, only_path: true)
     else
-      image_url.presence || 'https://via.placeholder.com/300x300?text=No+Image'
+      'https://via.placeholder.com/300x300?text=No+Image'
     end
   end
 end
