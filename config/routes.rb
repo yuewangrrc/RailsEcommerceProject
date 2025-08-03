@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   delete "cart/remove/:product_id", to: "cart#remove_item", as: "remove_from_cart"
   delete "cart/clear", to: "cart#clear", as: "clear_cart"
   
+  # Checkout routes
+  get "checkout", to: "checkout#show"
+  post "checkout", to: "checkout#create_order"
+  get "orders/:id/confirmation", to: "checkout#order_confirmation", as: "order_confirmation"
+  
   # Admin routes
   namespace :admin do
     root "dashboard#index"

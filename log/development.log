@@ -3923,3 +3923,203 @@ Completed 200 OK in 26ms (Views: 15.1ms | ActiveRecord: 0.5ms (3 queries, 0 cach
 
 
 Started GET "/assets/application-daeb8864.css" for ::1 at 2025-08-03 14:21:56 -0500
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Migrating to CreateProvinces (20250803192217)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "provinces" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "gst_rate" decimal, "pst_rate" decimal, "hst_rate" decimal, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250803192217') RETURNING "version" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+Migrating to AddAddressToUsers (20250803192225)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" ADD "street_address" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "city" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "postal_code" varchar /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='RailsProject'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admin" boolean, "street_address" varchar, "city" varchar, "postal_code" varchar) /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token") /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email") /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","admin","street_address","city","postal_code")
+                     SELECT "id","name","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","admin","street_address","city","postal_code" FROM "users" /*application='RailsProject'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "users" /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admin" boolean, "street_address" varchar, "city" varchar, "postal_code" varchar, "province_id" integer NOT NULL) /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id","name","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","admin","street_address","city","postal_code")
+                     SELECT "id","name","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","admin","street_address","city","postal_code" FROM "ausers" /*application='RailsProject'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='RailsProject'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Migrating to CreateProvinces (20250803192217)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE "provinces" /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250803192217' /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Migrating to CreateProvinces (20250803192217)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "provinces" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "gst_rate" decimal, "pst_rate" decimal, "hst_rate" decimal, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250803192217') RETURNING "version" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+Migrating to AddAddressToUsers (20250803192225)
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Migrating to AddAddressToUsers (20250803192225)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "users" ADD "street_address" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "city" varchar /*application='RailsProject'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "postal_code" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "province_id" integer /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_users_on_province_id" ON "users" ("province_id") /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admin" boolean, "street_address" varchar, "city" varchar, "postal_code" varchar, "province_id" integer) /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_ausers_on_province_id" ON "ausers" ("province_id") /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token") /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email") /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","admin","street_address","city","postal_code","province_id")
+                     SELECT "id","name","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","admin","street_address","city","postal_code","province_id" FROM "users" /*application='RailsProject'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "users" /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admin" boolean, "street_address" varchar, "city" varchar, "postal_code" varchar, "province_id" integer, CONSTRAINT "fk_rails_560da4bd54"
+FOREIGN KEY ("province_id")
+  REFERENCES "provinces" ("id")
+) /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_province_id" ON "users" ("province_id") /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","name","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","admin","street_address","city","postal_code","province_id")
+                     SELECT "id","name","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","admin","street_address","city","postal_code","province_id" FROM "ausers" /*application='RailsProject'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "ausers" /*application='RailsProject'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='RailsProject'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250803192225') RETURNING "version" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-08-03 14:24:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:19
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 6 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:39
+  Rendered home/index.html.erb within layouts/application (Duration: 13.8ms | GC: 0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/layouts/application.html.erb:55
+  Rendered shared/_flash_messages.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | GC: 0.9ms)
+Completed 200 OK in 51ms (Views: 33.2ms | ActiveRecord: 2.4ms (3 queries, 0 cached) | GC: 1.6ms)
+
+
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'New Brunswick' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'New Brunswick' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.2ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('New Brunswick', 0.0, 0.0, 0.15, '2025-08-03 19:25:34.582632', '2025-08-03 19:25:34.582632') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Newfoundland and Labrador' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Newfoundland and Labrador' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.1ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Newfoundland and Labrador', 0.0, 0.0, 0.15, '2025-08-03 19:25:34.596480', '2025-08-03 19:25:34.596480') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Nova Scotia' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Nova Scotia' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.2ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Nova Scotia', 0.0, 0.0, 0.15, '2025-08-03 19:25:34.602028', '2025-08-03 19:25:34.602028') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Ontario' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Ontario' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.1ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Ontario', 0.0, 0.0, 0.13, '2025-08-03 19:25:34.609642', '2025-08-03 19:25:34.609642') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Prince Edward Island' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Prince Edward Island' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.3ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Prince Edward Island', 0.0, 0.0, 0.15, '2025-08-03 19:25:34.620512', '2025-08-03 19:25:34.620512') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Alberta' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Alberta' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.1ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Alberta', 0.05, 0.0, 0.0, '2025-08-03 19:25:34.629022', '2025-08-03 19:25:34.629022') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'British Columbia' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'British Columbia' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.1ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('British Columbia', 0.05, 0.07, 0.0, '2025-08-03 19:25:34.639015', '2025-08-03 19:25:34.639015') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.2ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Manitoba' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Manitoba' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.1ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Manitoba', 0.05, 0.07, 0.0, '2025-08-03 19:25:34.657260', '2025-08-03 19:25:34.657260') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Quebec' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Quebec' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.1ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Quebec', 0.05, 0.09975, 0.0, '2025-08-03 19:25:34.665877', '2025-08-03 19:25:34.665877') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Saskatchewan' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Saskatchewan' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.1ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Saskatchewan', 0.05, 0.06, 0.0, '2025-08-03 19:25:34.672641', '2025-08-03 19:25:34.672641') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Northwest Territories' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Northwest Territories' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.1ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Northwest Territories', 0.05, 0.0, 0.0, '2025-08-03 19:25:34.681553', '2025-08-03 19:25:34.681553') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Nunavut' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Nunavut' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.1ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Nunavut', 0.05, 0.0, 0.0, '2025-08-03 19:25:34.689573', '2025-08-03 19:25:34.689573') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Yukon' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "provinces" WHERE "provinces"."name" = 'Yukon' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Create (0.1ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "gst_rate", "pst_rate", "hst_rate", "created_at", "updated_at") VALUES ('Yukon', 0.05, 0.0, 0.0, '2025-08-03 19:25:34.697543', '2025-08-03 19:25:34.697543') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+Started GET "/products?id=ffdc3742-a738-4c73-b7b3-148b8a90a42c&vscodeBrowserReqId=1754249299863" for ::1 at 2025-08-03 14:28:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Processing by ProductsController#index as HTML
+  Parameters: {"id"=>"ffdc3742-a738-4c73-b7b3-148b8a90a42c", "vscodeBrowserReqId"=>"1754249299863"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:19
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:43
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:44
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:44
+  Rendered shared/_product_card.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:63
+  Rendered products/index.html.erb within layouts/application (Duration: 35.7ms | GC: 0.9ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 1.3ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | GC: 1.6ms)
+Completed 200 OK in 61ms (Views: 42.3ms | ActiveRecord: 2.2ms (5 queries, 0 cached) | GC: 1.8ms)
+
+

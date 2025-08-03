@@ -95,7 +95,7 @@
             </div>
             
             <% if user_signed_in? %>
-              <%= link_to "Proceed to Checkout", "#", 
+              <%= link_to "Proceed to Checkout", checkout_path, 
                   class: "btn btn-primary w-100 mb-2" %>
             <% else %>
               <%= link_to "Sign In to Checkout", new_user_session_path, 

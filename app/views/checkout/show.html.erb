@@ -1,0 +1,164 @@
+<% content_for :title, "Checkout" %>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="mb-4">Checkout</h1>
+      
+      <%= form_with model: current_user, url: checkout_path, method: :post, local: true do |f| %>
+        <!-- Shipping Address -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Shipping Address</h5>
+          </div>
+          <div class="card-body">
+            <% if current_user.has_address? %>
+              <div class="alert alert-info">
+                <strong>Current Address:</strong><br>
+                <%= current_user.full_address %>
+                <button type="button" class="btn btn-sm btn-outline-primary ms-2" 
+                        onclick="document.getElementById('address-form').style.display = 'block';">
+                  Change Address
+                </button>
+              </div>
+              <div id="address-form" style="display: none;">
+            <% else %>
+              <div class="alert alert-warning">
+                Please provide your shipping address to continue.
+              </div>
+              <div id="address-form">
+            <% end %>
+            
+              <div class="row g-3">
+                <div class="col-12">
+                  <%= f.label :street_address, "Street Address", class: "form-label" %>
+                  <%= f.text_field :street_address, class: "form-control", 
+                      value: current_user.street_address, required: !current_user.has_address? %>
+                </div>
+                
+                <div class="col-md-6">
+                  <%= f.label :city, class: "form-label" %>
+                  <%= f.text_field :city, class: "form-control", 
+                      value: current_user.city, required: !current_user.has_address? %>
+                </div>
+                
+                <div class="col-md-6">
+                  <%= f.label :postal_code, "Postal Code", class: "form-label" %>
+                  <%= f.text_field :postal_code, class: "form-control", 
+                      value: current_user.postal_code, required: !current_user.has_address? %>
+                </div>
+                
+                <div class="col-12">
+                  <%= f.label :province_id, "Province/Territory", class: "form-label" %>
+                  <%= f.collection_select :province_id, @provinces, :id, :name, 
+                      { selected: current_user.province_id }, 
+                      { class: "form-select", required: !current_user.has_address?, 
+                        onchange: "updateTaxes()" } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Order Items -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Order Items</h5>
+          </div>
+          <div class="card-body">
+            <% @cart_items.each do |item| %>
+              <div class="row align-items-center border-bottom py-2">
+                <div class="col-md-2">
+                  <img src="<%= item[:product].image_url %>" 
+                       alt="<%= item[:product].name %>" 
+                       class="img-fluid rounded" 
+                       style="max-height: 60px;">
+                </div>
+                <div class="col-md-6">
+                  <h6 class="mb-1"><%= item[:product].name %></h6>
+                  <small class="text-muted">Size: <%= item[:product].size %></small>
+                </div>
+                <div class="col-md-2 text-center">
+                  <span class="badge bg-secondary">Qty: <%= item[:quantity] %></span>
+                </div>
+                <div class="col-md-2 text-end">
+                  <strong>$<%= sprintf("%.2f", item[:total_price]) %></strong>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        
+        <!-- Place Order Button -->
+        <div class="d-grid gap-2">
+          <%= f.submit "Place Order", class: "btn btn-success btn-lg", 
+              disabled: !current_user.has_address? && @province.nil? %>
+          <%= link_to "Back to Cart", cart_path, class: "btn btn-outline-secondary" %>
+        </div>
+      <% end %>
+    </div>
+    
+    <!-- Order Summary Sidebar -->
+    <div class="col-md-4">
+      <div class="card sticky-top" style="top: 20px;">
+        <div class="card-header">
+          <h5 class="mb-0">Order Summary</h5>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between mb-2">
+            <span>Subtotal:</span>
+            <span>$<%= sprintf("%.2f", @subtotal) %></span>
+          </div>
+          
+          <div class="d-flex justify-content-between mb-2">
+            <span>Shipping:</span>
+            <span>Free</span>
+          </div>
+          
+          <div class="d-flex justify-content-between mb-2">
+            <span>Tax <%= @province ? "(#{@province.name})" : "" %>:</span>
+            <span id="tax-amount">$<%= sprintf("%.2f", @tax_amount) %></span>
+          </div>
+          
+          <% if @province %>
+            <div class="small text-muted mb-2">
+              <% if @province.hst_rate > 0 %>
+                HST (<%= (@province.hst_rate * 100).round(2) %>%)
+              <% else %>
+                GST (<%= (@province.gst_rate * 100).round(2) %>%) 
+                <% if @province.pst_rate > 0 %>
+                  + PST (<%= (@province.pst_rate * 100).round(2) %>%)
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+          
+          <hr>
+          
+          <div class="d-flex justify-content-between mb-3">
+            <strong>Total:</strong>
+            <strong id="total-amount">$<%= sprintf("%.2f", @total) %></strong>
+          </div>
+          
+          <div class="small text-muted">
+            <i class="fas fa-shield-alt"></i> Secure checkout<br>
+            <i class="fas fa-truck"></i> Free shipping on all orders
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function updateTaxes() {
+  const provinceSelect = document.querySelector('select[name="user[province_id]"]');
+  const selectedProvinceId = provinceSelect.value;
+  
+  if (selectedProvinceId) {
+    // This would need AJAX to update taxes dynamically
+    // For now, we'll submit the form to recalculate
+    provinceSelect.form.submit();
+  }
+}
+</script>

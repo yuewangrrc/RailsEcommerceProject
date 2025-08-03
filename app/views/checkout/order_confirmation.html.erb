@@ -1,0 +1,147 @@
+<% content_for :title, "Order Confirmation" %>
+
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <div class="mb-3">
+      <i class="fas fa-check-circle text-success" style="font-size: 4rem;"></i>
+    </div>
+    <h1 class="text-success">Order Placed Successfully!</h1>
+    <p class="lead">Thank you for your order. Your order number is <strong>#<%= @order.id %></strong></p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <!-- Order Details -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5 class="mb-0">Order Details</h5>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <strong>Order Number:</strong> #<%= @order.id %><br>
+              <strong>Order Date:</strong> <%= @order.created_at.strftime("%B %d, %Y at %I:%M %p") %><br>
+              <strong>Status:</strong> 
+              <span class="badge bg-warning"><%= @order.status.capitalize %></span>
+            </div>
+            <div class="col-md-6">
+              <strong>Total Amount:</strong> $<%= sprintf("%.2f", @order.total_price) %><br>
+              <strong>Payment Status:</strong> 
+              <span class="badge bg-secondary">Pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shipping Address -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5 class="mb-0">Shipping Address</h5>
+        </div>
+        <div class="card-body">
+          <address>
+            <strong><%= current_user.name %></strong><br>
+            <%= current_user.street_address %><br>
+            <%= current_user.city %>, <%= current_user.province.name %> <%= current_user.postal_code %>
+          </address>
+        </div>
+      </div>
+
+      <!-- Order Items -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5 class="mb-0">Items Ordered</h5>
+        </div>
+        <div class="card-body">
+          <% @order_items.each do |item| %>
+            <div class="row align-items-center border-bottom py-3">
+              <div class="col-md-2">
+                <img src="<%= item.product.image_url %>" 
+                     alt="<%= item.product.name %>" 
+                     class="img-fluid rounded" 
+                     style="max-height: 80px;">
+              </div>
+              <div class="col-md-6">
+                <h6 class="mb-1"><%= item.product.name %></h6>
+                <p class="text-muted mb-1">Size: <%= item.product.size %></p>
+                <p class="text-muted mb-0">Unit Price: $<%= sprintf("%.2f", item.price) %></p>
+              </div>
+              <div class="col-md-2 text-center">
+                <span class="badge bg-secondary">Qty: <%= item.quantity %></span>
+              </div>
+              <div class="col-md-2 text-end">
+                <strong>$<%= sprintf("%.2f", item.price * item.quantity) %></strong>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">Order Summary</h5>
+        </div>
+        <div class="card-body">
+          <% 
+            subtotal = @order_items.sum { |item| item.price * item.quantity }
+            tax_amount = @order.total_price - subtotal
+          %>
+          
+          <div class="d-flex justify-content-between mb-2">
+            <span>Subtotal:</span>
+            <span>$<%= sprintf("%.2f", subtotal) %></span>
+          </div>
+          
+          <div class="d-flex justify-content-between mb-2">
+            <span>Shipping:</span>
+            <span>Free</span>
+          </div>
+          
+          <div class="d-flex justify-content-between mb-2">
+            <span>Tax (<%= current_user.province.name %>):</span>
+            <span>$<%= sprintf("%.2f", tax_amount) %></span>
+          </div>
+          
+          <hr>
+          
+          <div class="d-flex justify-content-between mb-3">
+            <strong>Total:</strong>
+            <strong>$<%= sprintf("%.2f", @order.total_price) %></strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- What's Next -->
+      <div class="card mt-4">
+        <div class="card-header">
+          <h5 class="mb-0">What's Next?</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="fas fa-envelope text-primary"></i>
+              You'll receive an order confirmation email shortly
+            </li>
+            <li class="mb-2">
+              <i class="fas fa-box text-info"></i>
+              We'll prepare your items for shipping
+            </li>
+            <li class="mb-2">
+              <i class="fas fa-truck text-success"></i>
+              You'll get tracking information when your order ships
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="text-center mt-5">
+    <%= link_to "Continue Shopping", products_path, class: "btn btn-primary me-3" %>
+    <%= link_to "View All Orders", "#", class: "btn btn-outline-secondary" %>
+  </div>
+</div>

@@ -21,6 +21,10 @@
     <% elsif controller_name == 'cart' %>
       <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
       
+    <% elsif controller_name == 'checkout' %>
+      <%= link_to "Cart", cart_path, class: "breadcrumb-item text-decoration-none" %>
+      <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+      
     <% elsif action_name == 'about' %>
       <li class="breadcrumb-item active" aria-current="page">About</li>
     <% end %>
