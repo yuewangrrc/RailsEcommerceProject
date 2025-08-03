@@ -21627,3 +21627,5 @@ Migrating to CreatePages (20250803224124)
   [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'admin@swimi.com' LIMIT 1[0m
   [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Administrator', 'admin@swimi.com', '$2a$12$SeGcfkPf1CIePQaeflR1lO6X2jTp5XHkvvgq6dy4QZu4HRFKEAa8S', NULL, NULL, NULL, '2025-08-03 23:40:47.835216', '2025-08-03 23:40:47.835216', 1, NULL, NULL, NULL, 27) RETURNING "id" /*application='RailsProject'*/[0m
   [1m[36mTRANSACTION (8.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" ORDER BY "provinces"."id" ASC LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@swimi.com' LIMIT 1 /*application='RailsProject'*/[0m

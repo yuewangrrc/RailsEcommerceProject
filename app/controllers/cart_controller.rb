@@ -3,30 +3,47 @@ class CartController < ApplicationController
 
   def show
     @cart_items = []
+    invalid_items = []
     
     @cart.each do |product_id, quantity|
-      product = Product.find(product_id)
-      @cart_items << {
-        product: product,
-        quantity: quantity,
-        total_price: product.price * quantity
-      }
+      begin
+        product = Product.find(product_id)
+        @cart_items << {
+          product: product,
+          quantity: quantity,
+          total_price: product.price * quantity
+        }
+      rescue ActiveRecord::RecordNotFound
+        # Product no longer exists, mark for removal from cart
+        invalid_items << product_id
+      end
+    end
+    
+    # Remove invalid items from cart
+    if invalid_items.any?
+      invalid_items.each { |id| @cart.delete(id) }
+      session[:cart] = @cart
+      flash[:warning] = "Some items in your cart are no longer available and have been removed."
     end
     
     @total_price = @cart_items.sum { |item| item[:total_price] }
   end
 
   def add_item
-    product = Product.find(params[:product_id])
-    
-    if @cart[product.id.to_s]
-      @cart[product.id.to_s] += 1
-    else
-      @cart[product.id.to_s] = 1
+    begin
+      product = Product.find(params[:product_id])
+      
+      if @cart[product.id.to_s]
+        @cart[product.id.to_s] += 1
+      else
+        @cart[product.id.to_s] = 1
+      end
+      
+      session[:cart] = @cart
+      redirect_to product_path(product), notice: "#{product.name} has been added to your cart!"
+    rescue ActiveRecord::RecordNotFound
+      redirect_to products_path, alert: "Product not found."
     end
-    
-    session[:cart] = @cart
-    redirect_to product_path(product), notice: "#{product.name} has been added to your cart!"
   end
 
   def update_item
