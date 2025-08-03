@@ -9,8 +9,8 @@
 
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="mb-3">
-              <%= f.label :email, class: "form-label" %>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              <%= f.label :login, "Username or Email", class: "form-label" %>
+              <%= f.text_field :login, autofocus: true, autocomplete: "username", class: "form-control", placeholder: "Enter your username or email" %>
             </div>
 
             <div class="mb-3">

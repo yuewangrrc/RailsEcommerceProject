@@ -8231,3 +8231,863 @@ Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at
   
 ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
   
+Started GET "/admin" for 127.0.0.1 at 2025-08-03 15:22:24 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:3:in `index'
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:4:in `index'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:5:in `index'
+  [1m[36mOrder Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `index'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:110
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:111
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mOrder Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:135
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:136
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 32.2ms | GC: 2.2ms)
+  Rendered layout layouts/admin.html.erb (Duration: 37.2ms | GC: 2.2ms)
+Completed 200 OK in 79ms (Views: 36.4ms | ActiveRecord: 5.3ms (14 queries, 3 cached) | GC: 4.3ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-08-03 15:22:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets/application-daeb8864.css" for 127.0.0.1 at 2025-08-03 15:22:25 -0500
+Started GET "/assets/application-bfcdf840.js" for 127.0.0.1 at 2025-08-03 15:22:25 -0500
+Started GET "/assets/turbo.min-3a2e143f.js" for 127.0.0.1 at 2025-08-03 15:22:25 -0500
+Started GET "/assets/controllers/hello_controller-708796bd.js" for 127.0.0.1 at 2025-08-03 15:22:25 -0500
+Started GET "/assets/controllers/index-ee64e1f1.js" for 127.0.0.1 at 2025-08-03 15:22:25 -0500
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for 127.0.0.1 at 2025-08-03 15:22:25 -0500
+Started GET "/assets/stimulus.min-4b1e420e.js" for 127.0.0.1 at 2025-08-03 15:22:25 -0500
+Started GET "/assets/controllers/application-3affb389.js" for 127.0.0.1 at 2025-08-03 15:22:25 -0500
+Started GET "/assets/turbo.min-5f3b7fda.js.map" for 127.0.0.1 at 2025-08-03 15:22:25 -0500
+Started GET "/assets/stimulus.min-2395e199.js.map" for 127.0.0.1 at 2025-08-03 15:22:25 -0500
+Started GET "/admin" for 127.0.0.1 at 2025-08-03 15:22:28 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:3:in `index'
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:4:in `index'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:5:in `index'
+  [1m[36mOrder Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `index'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:110
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:111
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mOrder Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:135
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:136
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 16.8ms | GC: 1.3ms)
+  Rendered layout layouts/admin.html.erb (Duration: 17.9ms | GC: 1.3ms)
+Completed 200 OK in 45ms (Views: 17.3ms | ActiveRecord: 2.3ms (14 queries, 3 cached) | GC: 5.9ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-08-03 15:22:28 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets/application-daeb8864.css" for 127.0.0.1 at 2025-08-03 15:22:28 -0500
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for 127.0.0.1 at 2025-08-03 15:22:28 -0500
+Started GET "/assets/stimulus.min-4b1e420e.js" for 127.0.0.1 at 2025-08-03 15:22:28 -0500
+Started GET "/assets/controllers/hello_controller-708796bd.js" for 127.0.0.1 at 2025-08-03 15:22:29 -0500
+Started GET "/assets/controllers/index-ee64e1f1.js" for 127.0.0.1 at 2025-08-03 15:22:29 -0500
+Started GET "/assets/turbo.min-3a2e143f.js" for 127.0.0.1 at 2025-08-03 15:22:29 -0500
+Started GET "/assets/application-bfcdf840.js" for 127.0.0.1 at 2025-08-03 15:22:29 -0500
+Started GET "/assets/controllers/application-3affb389.js" for 127.0.0.1 at 2025-08-03 15:22:29 -0500
+Started GET "/assets/turbo.min-5f3b7fda.js.map" for 127.0.0.1 at 2025-08-03 15:22:29 -0500
+Started GET "/assets/stimulus.min-2395e199.js.map" for 127.0.0.1 at 2025-08-03 15:22:29 -0500
+Started GET "/" for 127.0.0.1 at 2025-08-03 15:22:30 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:19
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 6 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 7.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/layouts/application.html.erb:55
+  Rendered shared/_flash_messages.html.erb (Duration: 0.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 0.4ms)
+Completed 200 OK in 29ms (Views: 13.9ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-08-03 15:22:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets/application-daeb8864.css" for 127.0.0.1 at 2025-08-03 15:22:30 -0500
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for 127.0.0.1 at 2025-08-03 15:22:30 -0500
+Started GET "/assets/stimulus.min-4b1e420e.js" for 127.0.0.1 at 2025-08-03 15:22:31 -0500
+Started GET "/assets/controllers/hello_controller-708796bd.js" for 127.0.0.1 at 2025-08-03 15:22:31 -0500
+Started GET "/assets/controllers/index-ee64e1f1.js" for 127.0.0.1 at 2025-08-03 15:22:31 -0500
+Started GET "/assets/turbo.min-3a2e143f.js" for 127.0.0.1 at 2025-08-03 15:22:31 -0500
+Started GET "/assets/application-bfcdf840.js" for 127.0.0.1 at 2025-08-03 15:22:31 -0500
+Started GET "/assets/controllers/application-3affb389.js" for 127.0.0.1 at 2025-08-03 15:22:31 -0500
+Started GET "/assets/stimulus.min-2395e199.js.map" for 127.0.0.1 at 2025-08-03 15:22:31 -0500
+Started GET "/assets/turbo.min-5f3b7fda.js.map" for 127.0.0.1 at 2025-08-03 15:22:31 -0500
+Started GET "/cart" for 127.0.0.1 at 2025-08-03 15:22:32 -0500
+Processing by CartController#show as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 69 LIMIT 1 /*action='show',application='RailsProject',controller='cart'*/[0m
+  ↳ app/controllers/cart_controller.rb:8:in `block in show'
+  Rendering layout layouts/application.html.erb
+  Rendering cart/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='cart'*/[0m
+  ↳ app/views/cart/show.html.erb:95
+  Rendered cart/show.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 1.8ms)
+Completed 200 OK in 37ms (Views: 13.6ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 6.6ms)
+
+
+Started GET "/assets/application-daeb8864.css" for 127.0.0.1 at 2025-08-03 15:22:32 -0500
+Started GET "/users/edit" for 127.0.0.1 at 2025-08-03 15:22:33 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='RailsProject',controller='registrations'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 7.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2025-08-03 15:22:34 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:3:in `index'
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:4:in `index'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:5:in `index'
+  [1m[36mOrder Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `index'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:110
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:111
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mOrder Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:135
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:136
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 10.8ms | GC: 0.4ms)
+  Rendered layout layouts/admin.html.erb (Duration: 11.8ms | GC: 0.4ms)
+Completed 200 OK in 27ms (Views: 11.5ms | ActiveRecord: 1.1ms (14 queries, 3 cached) | GC: 0.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2025-08-03 15:22:35 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:3:in `index'
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:4:in `index'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:5:in `index'
+  [1m[36mOrder Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `index'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:110
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:111
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mOrder Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:135
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:136
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 12.6ms | GC: 0.0ms)
+  Rendered layout layouts/admin.html.erb (Duration: 13.8ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 13.2ms | ActiveRecord: 1.6ms (14 queries, 3 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+Started GET "/assets/application-daeb8864.css" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+Started GET "/assets/application-bfcdf840.js" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets/turbo.min-3a2e143f.js" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+Started GET "/assets/controllers/hello_controller-708796bd.js" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+Started GET "/assets/controllers/index-ee64e1f1.js" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+Started GET "/assets/stimulus.min-4b1e420e.js" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+Started GET "/assets/controllers/application-3affb389.js" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+Started GET "/assets/turbo.min-5f3b7fda.js.map" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+Started GET "/assets/stimulus.min-2395e199.js.map" for 127.0.0.1 at 2025-08-03 15:22:36 -0500
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2025-08-03 15:22:38 -0500
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RailsProject',controller='sessions'*/[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 22ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-08-03 15:22:38 -0500
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:19
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 6 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | GC: 0.3ms)
+Completed 200 OK in 24ms (Views: 11.3ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/assets/application-daeb8864.css" for 127.0.0.1 at 2025-08-03 15:22:38 -0500
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-08-03 15:22:40 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-08-03 15:22:43 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:77
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  Rendered shared/_product_card.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 31.5ms | GC: 8.5ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | GC: 8.5ms)
+Completed 200 OK in 44ms (Views: 33.0ms | ActiveRecord: 0.8ms (5 queries, 0 cached) | GC: 8.5ms)
+
+
+Started GET "/products/68" for 127.0.0.1 at 2025-08-03 15:22:45 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"68"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 68 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:40:in `set_product'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."category_id" = 5 AND "products"."id" != 68 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:66
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 5 AND "products"."id" != 68 LIMIT 4 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:70
+  Rendered products/show.html.erb within layouts/application (Duration: 10.0ms | GC: 1.1ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | GC: 1.1ms)
+Completed 200 OK in 24ms (Views: 12.1ms | ActiveRecord: 0.8ms (4 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-08-03 15:22:47 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 8.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-08-03 15:22:47 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:77
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  Rendered shared/_product_card.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 19.7ms | GC: 1.7ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | GC: 1.7ms)
+Completed 200 OK in 30ms (Views: 22.7ms | ActiveRecord: 0.9ms (5 queries, 0 cached) | GC: 1.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-08-03 15:22:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 3.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-08-03 15:25:08 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:77
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  Rendered shared/_product_card.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 16.3ms | GC: 16.3ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 47.5ms | GC: 16.3ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 51.1ms | GC: 16.3ms)
+Completed 200 OK in 70ms (Views: 51.0ms | ActiveRecord: 1.5ms (5 queries, 0 cached) | GC: 16.3ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Migrating to AddUniqueIndexToUsersName (20250803202809)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_name" ON "users" ("name") /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250803202809') RETURNING "version" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-08-03 15:29:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 299ms (ActiveRecord: 2.0ms (0 queries, 0 cached) | GC: 24.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `login' for an instance of User)
+Caused by: NoMethodError (undefined method `login' for an instance of User)
+
+Information for: ActionView::Template::Error (undefined method `login' for an instance of User):
+    10:           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    11:             <div class="mb-3">
+    12:               <%= f.label :login, "Username or Email", class: "form-label" %>
+    13:               <%= f.text_field :login, autofocus: true, autocomplete: "username", class: "form-control", placeholder: "Enter your username or email" %>
+    14:             </div>
+    15: 
+    16:             <div class="mb-3">
+  
+app/views/devise/sessions/new.html.erb:13
+app/views/devise/sessions/new.html.erb:10
+
+Information for cause: NoMethodError (undefined method `login' for an instance of User):
+  
+app/views/devise/sessions/new.html.erb:13
+app/views/devise/sessions/new.html.erb:10
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-08-03 15:29:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-08-03 15:29:15 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `login' for an instance of User)
+Caused by: NoMethodError (undefined method `login' for an instance of User)
+
+Information for: ActionView::Template::Error (undefined method `login' for an instance of User):
+    10:           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    11:             <div class="mb-3">
+    12:               <%= f.label :login, "Username or Email", class: "form-label" %>
+    13:               <%= f.text_field :login, autofocus: true, autocomplete: "username", class: "form-control", placeholder: "Enter your username or email" %>
+    14:             </div>
+    15: 
+    16:             <div class="mb-3">
+  
+app/views/devise/sessions/new.html.erb:13
+app/views/devise/sessions/new.html.erb:10
+
+Information for cause: NoMethodError (undefined method `login' for an instance of User):
+  
+app/views/devise/sessions/new.html.erb:13
+app/views/devise/sessions/new.html.erb:10
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-08-03 15:29:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-08-03 15:30:20 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | GC: 1.1ms)
+Completed 200 OK in 42ms (Views: 23.5ms | ActiveRecord: 1.4ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-08-03 15:30:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets/application-daeb8864.css" for 127.0.0.1 at 2025-08-03 15:30:20 -0500
+Started GET "/assets/application-bfcdf840.js" for 127.0.0.1 at 2025-08-03 15:30:20 -0500
+Started GET "/assets/turbo.min-3a2e143f.js" for 127.0.0.1 at 2025-08-03 15:30:20 -0500
+Started GET "/assets/controllers/hello_controller-708796bd.js" for 127.0.0.1 at 2025-08-03 15:30:21 -0500
+Started GET "/assets/controllers/index-ee64e1f1.js" for 127.0.0.1 at 2025-08-03 15:30:21 -0500
+Started GET "/assets/stimulus.min-4b1e420e.js" for 127.0.0.1 at 2025-08-03 15:30:21 -0500
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for 127.0.0.1 at 2025-08-03 15:30:21 -0500
+Started GET "/assets/controllers/application-3affb389.js" for 127.0.0.1 at 2025-08-03 15:30:21 -0500
+Started GET "/assets/turbo.min-5f3b7fda.js.map" for 127.0.0.1 at 2025-08-03 15:30:21 -0500
+Started GET "/assets/stimulus.min-2395e199.js.map" for 127.0.0.1 at 2025-08-03 15:30:21 -0500
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-08-03 15:30:28 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(name) = 'admin' OR lower(email) = 'admin') ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RailsProject',controller='sessions'*/[0m
+  ↳ app/models/user.rb:22:in `find_for_database_authentication'
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 304ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 8.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-08-03 15:30:29 -0500
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:19
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 6 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 24.2ms | GC: 2.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/layouts/application.html.erb:55
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | GC: 2.8ms)
+Completed 200 OK in 49ms (Views: 28.7ms | ActiveRecord: 1.6ms (3 queries, 0 cached) | GC: 3.9ms)
+
+
+Started GET "/assets/application-daeb8864.css" for 127.0.0.1 at 2025-08-03 15:30:29 -0500
+Started GET "/products" for 127.0.0.1 at 2025-08-03 15:30:36 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:77
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/shared/_product_card.html.erb:20
+  Rendered shared/_product_card.html.erb (Duration: 2.7ms | GC: 0.2ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 36.9ms | GC: 0.8ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | GC: 1.1ms)
+Completed 200 OK in 53ms (Views: 38.9ms | ActiveRecord: 1.1ms (6 queries, 0 cached) | GC: 1.1ms)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2025-08-03 15:30:39 -0500
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RailsProject',controller='sessions'*/[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 18ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-08-03 15:30:39 -0500
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:19
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 6 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-08-03 15:30:41 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:77
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  Rendered shared/_product_card.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 15.6ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 19.5ms | ActiveRecord: 0.6ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/67" for 127.0.0.1 at 2025-08-03 15:30:43 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"67"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 67 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:40:in `set_product'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."category_id" = 5 AND "products"."id" != 67 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:66
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 5 AND "products"."id" != 67 LIMIT 4 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:70
+  Rendered products/show.html.erb within layouts/application (Duration: 7.2ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 11.6ms | ActiveRecord: 0.8ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-08-03 15:30:45 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 9.9ms)
+Completed 200 OK in 26ms (Views: 15.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-08-03 15:30:46 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:77
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  Rendered shared/_product_card.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 26.8ms | GC: 1.4ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | GC: 1.4ms)
+Completed 200 OK in 36ms (Views: 28.4ms | ActiveRecord: 0.7ms (5 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/products/69" for 127.0.0.1 at 2025-08-03 15:31:05 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 69 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:40:in `set_product'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."category_id" = 5 AND "products"."id" != 69 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:66
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 5 AND "products"."id" != 69 LIMIT 4 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:70
+  Rendered products/show.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 6.3ms | ActiveRecord: 0.9ms (4 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-08-03 15:31:08 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.5ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.5ms)
+Completed 200 OK in 14ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-08-03 15:31:17 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(name) = 'admin' OR lower(email) = 'admin') ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RailsProject',controller='sessions'*/[0m
+  ↳ app/models/user.rb:22:in `find_for_database_authentication'
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 247ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-08-03 15:31:17 -0500
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:19
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 6 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/layouts/application.html.erb:55
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.2ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-08-03 15:31:21 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:77
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/shared/_product_card.html.erb:20
+  Rendered shared/_product_card.html.erb (Duration: 3.6ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 25.2ms | GC: 1.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | GC: 1.0ms)
+Completed 200 OK in 34ms (Views: 26.3ms | ActiveRecord: 1.0ms (6 queries, 0 cached) | GC: 1.0ms)
+
+
+Started POST "/cart/add/70" for 127.0.0.1 at 2025-08-03 15:31:24 -0500
+Processing by CartController#add_item as TURBO_STREAM
+  Parameters: {"product_id"=>"70"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 70 LIMIT 1 /*action='add_item',application='RailsProject',controller='cart'*/[0m
+  ↳ app/controllers/cart_controller.rb:20:in `add_item'
+Redirected to http://127.0.0.1:3000/products/70
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/70" for 127.0.0.1 at 2025-08-03 15:31:24 -0500
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"70"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 70 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:40:in `set_product'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:50
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."category_id" = 5 AND "products"."id" != 70 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:66
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 5 AND "products"."id" != 70 LIMIT 4 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:70
+  Rendered products/show.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 7.9ms | ActiveRecord: 0.7ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/cart" for 127.0.0.1 at 2025-08-03 15:31:28 -0500
+Processing by CartController#show as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 70 LIMIT 1 /*action='show',application='RailsProject',controller='cart'*/[0m
+  ↳ app/controllers/cart_controller.rb:8:in `block in show'
+  Rendering layout layouts/application.html.erb
+  Rendering cart/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='cart'*/[0m
+  ↳ app/views/cart/show.html.erb:95
+  Rendered cart/show.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | GC: 10.8ms)
+Completed 200 OK in 33ms (Views: 21.7ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 10.8ms)
+
+
+Started GET "/checkout" for 127.0.0.1 at 2025-08-03 15:31:29 -0500
+Processing by CheckoutController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='checkout'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 70 LIMIT 1 /*action='show',application='RailsProject',controller='checkout'*/[0m
+  ↳ app/controllers/checkout_controller.rb:94:in `block in build_cart_items'
+  [1m[36mProvince Load (0.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."id" = 8 LIMIT 1 /*action='show',application='RailsProject',controller='checkout'*/[0m
+  ↳ app/controllers/checkout_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering checkout/show.html.erb within layouts/application
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" ORDER BY "provinces"."name" ASC /*action='show',application='RailsProject',controller='checkout'*/[0m
+  ↳ app/views/checkout/show.html.erb:53
+  Rendered checkout/show.html.erb within layouts/application (Duration: 5.6ms | GC: 0.6ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.6ms)
+Completed 200 OK in 38ms (Views: 8.2ms | ActiveRecord: 1.3ms (4 queries, 0 cached) | GC: 1.9ms)
+
+
