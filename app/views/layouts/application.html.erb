@@ -59,6 +59,10 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %></li>
+                  <% if current_user.admin? %>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><%= link_to "Admin Dashboard", admin_root_path, class: "dropdown-item" %></li>
+                  <% end %>
                   <li><hr class="dropdown-divider"></li>
                   <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
                 </ul>

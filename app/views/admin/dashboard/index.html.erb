@@ -1,0 +1,155 @@
+<% content_for :title, "Admin Dashboard" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>Admin Dashboard</h1>
+  <span class="badge bg-secondary">Administrator Panel</span>
+</div>
+
+<!-- Statistics Cards -->
+<div class="row mb-4">
+  <div class="col-md-3">
+    <div class="card bg-primary text-white">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4><%= @products_count %></h4>
+            <p class="mb-0">Products</p>
+          </div>
+          <div class="align-self-center">
+            <i class="fas fa-box fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    <div class="card bg-success text-white">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4><%= @categories_count %></h4>
+            <p class="mb-0">Categories</p>
+          </div>
+          <div class="align-self-center">
+            <i class="fas fa-tags fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    <div class="card bg-info text-white">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4><%= @users_count %></h4>
+            <p class="mb-0">Users</p>
+          </div>
+          <div class="align-self-center">
+            <i class="fas fa-users fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    <div class="card bg-warning text-white">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4><%= @orders_count %></h4>
+            <p class="mb-0">Orders</p>
+          </div>
+          <div class="align-self-center">
+            <i class="fas fa-shopping-cart fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="row mb-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">Quick Actions</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <%= link_to "Add New Product", new_admin_product_path, class: "btn btn-primary btn-lg w-100 mb-2" %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to "Manage Products", admin_products_path, class: "btn btn-outline-primary btn-lg w-100 mb-2" %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to "Manage Categories", admin_categories_path, class: "btn btn-outline-success btn-lg w-100 mb-2" %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to "View Store", root_path, class: "btn btn-outline-secondary btn-lg w-100 mb-2" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recent Products -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">Recent Products</h5>
+      </div>
+      <div class="card-body">
+        <% if @recent_products.any? %>
+          <% @recent_products.each do |product| %>
+            <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+              <div>
+                <strong><%= product.name %></strong><br>
+                <small class="text-muted">$<%= product.price %> - <%= product.category.name %></small>
+              </div>
+              <div>
+                <%= link_to "Edit", edit_admin_product_path(product), class: "btn btn-sm btn-outline-primary" %>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <p class="text-muted">No products yet.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">Recent Orders</h5>
+      </div>
+      <div class="card-body">
+        <% if @recent_orders.any? %>
+          <% @recent_orders.each do |order| %>
+            <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+              <div>
+                <strong>Order #<%= order.id %></strong><br>
+                <small class="text-muted">$<%= order.total_price %> - <%= order.status&.capitalize || 'Pending' %></small>
+              </div>
+              <div>
+                <span class="badge bg-<%= order.status == 'paid' ? 'success' : 'warning' %>">
+                  <%= order.status&.capitalize || 'Pending' %>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <p class="text-muted">No orders yet.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,13 @@ Rails.application.routes.draw do
   # Home routes
   get "about", to: "home#about"
   
+  # Admin routes
+  namespace :admin do
+    root "dashboard#index"
+    resources :products
+    resources :categories
+  end
+  
   # Resource routes
   resources :categories, only: [:index, :show] do 
     resources :products, only: [:index]
