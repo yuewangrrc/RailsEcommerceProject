@@ -91,25 +91,14 @@
       </div>
     </nav>
 
-    <% if notice %>
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <%= notice %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-      </div>
-    <% end %>
-    
-    <% if alert %>
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <%= alert %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-      </div>
-    <% end %>
+    <%= render 'shared/flash_messages' %>
 
     <main>
+      <div class="container mt-3">
+        <%= render 'shared/breadcrumbs' unless controller_name == 'home' %>
+      </div>
       <%= yield %>
-    </main>
-
-    <!-- Footer -->
+    </main>    <!-- Footer -->
     <footer class="bg-dark text-light mt-5 py-4">
       <div class="container">
         <div class="row">

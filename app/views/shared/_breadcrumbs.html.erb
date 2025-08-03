@@ -1,0 +1,28 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <%= link_to "Home", root_path, class: "breadcrumb-item text-decoration-none" %>
+    
+    <% if @category %>
+      <%= link_to "Categories", categories_path, class: "breadcrumb-item text-decoration-none" %>
+      
+      <% if @product %>
+        <%= link_to @category.name, category_path(@category), class: "breadcrumb-item text-decoration-none" %>
+        <li class="breadcrumb-item active" aria-current="page"><%= @product.name %></li>
+      <% else %>
+        <li class="breadcrumb-item active" aria-current="page"><%= @category.name %></li>
+      <% end %>
+      
+    <% elsif controller_name == 'products' %>
+      <li class="breadcrumb-item active" aria-current="page">Products</li>
+      
+    <% elsif controller_name == 'categories' %>
+      <li class="breadcrumb-item active" aria-current="page">Categories</li>
+      
+    <% elsif controller_name == 'cart' %>
+      <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+      
+    <% elsif action_name == 'about' %>
+      <li class="breadcrumb-item active" aria-current="page">About</li>
+    <% end %>
+  </ol>
+</nav>
