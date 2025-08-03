@@ -9091,3 +9091,81 @@ Processing by CheckoutController#show as HTML
 Completed 200 OK in 38ms (Views: 8.2ms | ActiveRecord: 1.3ms (4 queries, 0 cached) | GC: 1.9ms)
 
 
+Started GET "/products" for 127.0.0.1 at 2025-08-03 15:32:04 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:77
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/shared/_product_card.html.erb:20
+  Rendered shared/_product_card.html.erb (Duration: 2.8ms | GC: 0.1ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 24.4ms | GC: 1.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | GC: 1.0ms)
+Completed 200 OK in 38ms (Views: 26.8ms | ActiveRecord: 1.1ms (6 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/cart" for 127.0.0.1 at 2025-08-03 15:32:06 -0500
+Processing by CartController#show as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 70 LIMIT 1 /*action='show',application='RailsProject',controller='cart'*/[0m
+  ↳ app/controllers/cart_controller.rb:8:in `block in show'
+  Rendering layout layouts/application.html.erb
+  Rendering cart/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='cart'*/[0m
+  ↳ app/views/cart/show.html.erb:95
+  Rendered cart/show.html.erb within layouts/application (Duration: 3.4ms | GC: 0.3ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.3ms)
+Completed 200 OK in 18ms (Views: 5.5ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2025-08-03 15:32:09 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='RailsProject',controller='registrations'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.7ms | GC: 0.4ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.4ms)
+Completed 200 OK in 17ms (Views: 6.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/cart" for 127.0.0.1 at 2025-08-03 15:32:18 -0500
+Processing by CartController#show as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 70 LIMIT 1 /*action='show',application='RailsProject',controller='cart'*/[0m
+  ↳ app/controllers/cart_controller.rb:8:in `block in show'
+  Rendering layout layouts/application.html.erb
+  Rendering cart/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='cart'*/[0m
+  ↳ app/views/cart/show.html.erb:95
+  Rendered cart/show.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 6.4ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
