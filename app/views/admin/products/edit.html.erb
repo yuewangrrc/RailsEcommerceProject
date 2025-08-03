@@ -65,8 +65,7 @@
                   <div class="card-body p-2">
                     <div class="d-flex justify-content-between align-items-center">
                       <small class="text-muted">Image <%= index + 1 %></small>
-                      <%= link_to "Remove", admin_product_image_path(@product, image), 
-                          method: :delete,
+                      <%= link_to "Remove", image_admin_product_path(@product, image_id: image.id), 
                           data: { 
                             turbo_method: :delete,
                             turbo_confirm: "Are you sure you want to remove this image?" 
