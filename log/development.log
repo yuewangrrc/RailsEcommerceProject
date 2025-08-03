@@ -10710,3 +10710,56 @@ Migrating to AddActiveToProducts (20250803205928)
   [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250803205928') RETURNING "version" /*application='RailsProject'*/[0m
   [1m[36mTRANSACTION (8.8ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Started GET "/admin" for 127.0.0.1 at 2025-08-03 16:00:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  [1m[36mProduct Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:3:in `index'
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:4:in `index'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:5:in `index'
+  [1m[36mOrder Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `index'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:110
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:111
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mOrder Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:135
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:136
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 24.3ms | GC: 0.7ms)
+  Rendered layout layouts/admin.html.erb (Duration: 27.8ms | GC: 0.7ms)
+Completed 200 OK in 65ms (Views: 28.3ms | ActiveRecord: 2.2ms (14 queries, 3 cached) | GC: 1.5ms)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2025-08-03 16:00:38 -0500
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/index.html.erb within layouts/admin
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 20 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (7, 8) /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:60
+  Rendered admin/products/index.html.erb within layouts/admin (Duration: 24.2ms | GC: 0.9ms)
+  Rendered layout layouts/admin.html.erb (Duration: 27.1ms | GC: 1.1ms)
+Completed 200 OK in 55ms (Views: 27.1ms | ActiveRecord: 2.7ms (4 queries, 0 cached) | GC: 1.6ms)
+
+
