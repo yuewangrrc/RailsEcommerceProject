@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   post "checkout", to: "checkout#create_order"
   get "orders/:id/confirmation", to: "checkout#order_confirmation", as: "order_confirmation"
   
+  # User order management
+  resources :orders, only: [:index, :show]
+  
   # Admin routes
   namespace :admin do
     root "dashboard#index"

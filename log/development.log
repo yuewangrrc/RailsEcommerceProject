@@ -11581,3 +11581,73 @@ Information for cause: ActiveSupport::SyntaxErrorProxy (/home/ywang/RailsEcommer
 ):
   
 app/views/admin/products/index.html.erb:242: syntax error, unexpected `end'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Migrating to AddFieldsToOrders (20250803214655)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "orders" ADD "subtotal" decimal /*application='RailsProject'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "orders" ADD "tax" decimal /*application='RailsProject'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "orders" ADD "shipping_name" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "orders" ADD "shipping_address" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "orders" ADD "shipping_city" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "orders" ADD "shipping_postal_code" varchar /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='RailsProject'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='RailsProject'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aorders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "total_price" decimal, "status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "subtotal" decimal, "tax" decimal, "shipping_name" varchar, "shipping_address" varchar, "shipping_city" varchar, "shipping_postal_code" varchar) /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aorders_on_user_id" ON "aorders" ("user_id") /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "aorders" ("id","user_id","total_price","status","created_at","updated_at","subtotal","tax","shipping_name","shipping_address","shipping_city","shipping_postal_code")
+                     SELECT "id","user_id","total_price","status","created_at","updated_at","subtotal","tax","shipping_name","shipping_address","shipping_city","shipping_postal_code" FROM "orders" /*application='RailsProject'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "orders" /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "total_price" decimal, "status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "subtotal" decimal, "tax" decimal, "shipping_name" varchar, "shipping_address" varchar, "shipping_city" varchar, "shipping_postal_code" varchar, "province_id" integer NOT NULL, CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id") /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("id","user_id","total_price","status","created_at","updated_at","subtotal","tax","shipping_name","shipping_address","shipping_city","shipping_postal_code")
+                     SELECT "id","user_id","total_price","status","created_at","updated_at","subtotal","tax","shipping_name","shipping_address","shipping_city","shipping_postal_code" FROM "aorders" /*application='RailsProject'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='RailsProject'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Migrating to AddFieldsToOrders (20250803214655)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "orders" ADD "subtotal" decimal /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "orders" ADD "tax" decimal /*application='RailsProject'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "orders" ADD "shipping_name" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "orders" ADD "shipping_address" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "orders" ADD "shipping_city" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "orders" ADD "shipping_postal_code" varchar /*application='RailsProject'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "orders" ADD "province_id" integer /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_orders_on_province_id" ON "orders" ("province_id") /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='RailsProject'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aorders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "total_price" decimal, "status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "subtotal" decimal, "tax" decimal, "shipping_name" varchar, "shipping_address" varchar, "shipping_city" varchar, "shipping_postal_code" varchar, "province_id" integer) /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aorders_on_province_id" ON "aorders" ("province_id") /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aorders_on_user_id" ON "aorders" ("user_id") /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "aorders" ("id","user_id","total_price","status","created_at","updated_at","subtotal","tax","shipping_name","shipping_address","shipping_city","shipping_postal_code","province_id")
+                     SELECT "id","user_id","total_price","status","created_at","updated_at","subtotal","tax","shipping_name","shipping_address","shipping_city","shipping_postal_code","province_id" FROM "orders" /*application='RailsProject'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "orders" /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "total_price" decimal, "status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "subtotal" decimal, "tax" decimal, "shipping_name" varchar, "shipping_address" varchar, "shipping_city" varchar, "shipping_postal_code" varchar, "province_id" integer, CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_8a74c1d8fa"
+FOREIGN KEY ("province_id")
+  REFERENCES "provinces" ("id")
+) /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id") /*application='RailsProject'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_orders_on_province_id" ON "orders" ("province_id") /*application='RailsProject'*/[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("id","user_id","total_price","status","created_at","updated_at","subtotal","tax","shipping_name","shipping_address","shipping_city","shipping_postal_code","province_id")
+                     SELECT "id","user_id","total_price","status","created_at","updated_at","subtotal","tax","shipping_name","shipping_address","shipping_city","shipping_postal_code","province_id" FROM "aorders" /*application='RailsProject'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "aorders" /*application='RailsProject'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='RailsProject'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='RailsProject'*/[0m
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."name" = 'Ontario' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mOrder Update All (0.1ms)[0m  [1m[33mUPDATE "orders" SET "province_id" = 4 WHERE "orders"."province_id" IS NULL /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250803214655') RETURNING "version" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m

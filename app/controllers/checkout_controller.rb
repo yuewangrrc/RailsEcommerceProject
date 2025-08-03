@@ -48,7 +48,14 @@ class CheckoutController < ApplicationController
     # Create order
     @order = current_user.orders.build(
       total_price: @total,
-      status: 'pending'
+      subtotal: @subtotal,
+      tax: @tax_amount,
+      status: 'pending',
+      province: current_user.province,
+      shipping_name: current_user.name,
+      shipping_address: current_user.street_address,
+      shipping_city: current_user.city,
+      shipping_postal_code: current_user.postal_code
     )
 
     if @order.save
