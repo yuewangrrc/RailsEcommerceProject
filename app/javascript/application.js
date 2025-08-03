@@ -2,23 +2,41 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-// Ensure Bootstrap dropdowns work with Turbo
-document.addEventListener("turbo:load", function() {
-  // Re-initialize Bootstrap dropdowns after Turbo navigation
-  if (typeof bootstrap !== 'undefined') {
-    const dropdowns = document.querySelectorAll('.dropdown-toggle');
-    dropdowns.forEach(function(dropdown) {
-      new bootstrap.Dropdown(dropdown);
+// Simple and reliable dropdown handling
+document.addEventListener('click', function(e) {
+  // Handle dropdown toggle clicks
+  if (e.target.matches('.dropdown-toggle') || e.target.closest('.dropdown-toggle')) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const toggle = e.target.matches('.dropdown-toggle') ? e.target : e.target.closest('.dropdown-toggle');
+    const dropdown = toggle.closest('.dropdown');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    
+    // Close all other open dropdowns
+    document.querySelectorAll('.dropdown-menu').forEach(function(otherMenu) {
+      if (otherMenu !== menu) {
+        otherMenu.style.display = 'none';
+        const otherToggle = otherMenu.previousElementSibling;
+        if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+      }
     });
+    
+    // Toggle current dropdown
+    if (menu.style.display === 'block') {
+      menu.style.display = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+    } else {
+      menu.style.display = 'block';
+      toggle.setAttribute('aria-expanded', 'true');
+    }
   }
-});
-
-// Fallback: Re-initialize on DOM content loaded
-document.addEventListener("DOMContentLoaded", function() {
-  if (typeof bootstrap !== 'undefined') {
-    const dropdowns = document.querySelectorAll('.dropdown-toggle');
-    dropdowns.forEach(function(dropdown) {
-      new bootstrap.Dropdown(dropdown);
+  // Close all dropdowns when clicking outside
+  else if (!e.target.closest('.dropdown')) {
+    document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+      menu.style.display = 'none';
+      const toggle = menu.previousElementSibling;
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
     });
   }
 });
