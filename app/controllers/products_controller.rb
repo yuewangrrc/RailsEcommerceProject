@@ -6,21 +6,19 @@ class ProductsController < ApplicationController
     @products = Product.includes(:category)
     @categories = Category.all
     
-    # Filter by category if specified
+    # Initialize search parameters
+    @search_params = {
+      search: params[:search],
+      category: params[:category]
+    }
+    
+    # Apply search filters
+    @products = apply_search_filters(@products)
+    
+    # Handle category navigation (different from search)
     if params[:category_id].present?
       @products = @products.where(category_id: params[:category_id])
       @current_category = Category.find(params[:category_id])
-    end
-    
-    # Search functionality
-    if params[:search].present?
-      @products = @products.where("name ILIKE ? OR description ILIKE ?", 
-                                 "%#{params[:search]}%", "%#{params[:search]}%")
-    end
-    
-    # Filter by category from dropdown
-    if params[:category].present? && params[:category] != ""  
-      @products = @products.joins(:category).where(categories: { name: params[:category] })
     end
     
     @products = @products.page(params[:page]).per(12)
@@ -40,5 +38,23 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def apply_search_filters(products)
+    # Keyword search in name and description
+    if params[:search].present?
+      search_term = params[:search].strip
+      products = products.where(
+        "name ILIKE ? OR description ILIKE ?", 
+        "%#{search_term}%", "%#{search_term}%"
+      )
+    end
+    
+    # Category filter (from dropdown)
+    if params[:category].present? && params[:category] != ""
+      products = products.joins(:category).where(categories: { name: params[:category] })
+    end
+    
+    products
   end
 end
