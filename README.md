@@ -201,3 +201,21 @@ Contributions are welcome through pull requests with proper testing.
 ## test user
 邮箱： admin@swimi.com
 密码： admin123
+
+
+## get scraped data
+- run db.seed
+```
+rails db:seed
+```
+
+-  run
+```
+rake scraper:fetch_data
+rake scraper:import
+```
+
+-  Look up the data
+```
+cat tmp/scraped_data.json
+```

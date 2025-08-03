@@ -18007,3 +18007,605 @@ Migrating to CreatePages (20250803224124)
   ↳ lib/tasks/admin.rake:6:in `block (2 levels) in <main>'
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@swimi.com' LIMIT 1 /*application='RailsProject'*/[0m
   ↳ lib/tasks/admin.rake:6:in `block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" /*application='RailsProject'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 136 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 136 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 136 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (2.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 137 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 137 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 137 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 138 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 138 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 138 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 139 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 139 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 139 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 140 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 140 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 140 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 141 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 141 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 141 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 142 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 142 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 142 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.6ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 143 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 143 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 143 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 144 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 144 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 144 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.6ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 145 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 145 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 145 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.8ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 146 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 146 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 146 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 147 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 147 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 147 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 148 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 148 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 148 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.7ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 149 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 149 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 149 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 150 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 150 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 150 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 151 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 151 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 151 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 152 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 152 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 152 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 153 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 153 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 153 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.5ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 154 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 154 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 154 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (8.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 155 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 155 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 155 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 156 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 156 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 156 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 157 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 157 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 157 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 158 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 158 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 158 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 159 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 159 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 159 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (2.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 160 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 160 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 160 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 161 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 161 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 161 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 162 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 162 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 162 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (5.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 163 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 163 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 163 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 164 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 164 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 164 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.8ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 165 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 165 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 165 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.6ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 166 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 166 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 166 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 167 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 167 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 167 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 168 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 168 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 168 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.8ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 169 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 169 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 169 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 170 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 170 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 170 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 171 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 171 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 171 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 172 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 172 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 172 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 173 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 173 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 173 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 174 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 174 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 174 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 175 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 175 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 175 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 176 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 176 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 176 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 177 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 177 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 177 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 178 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 178 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 178 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 179 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 179 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 179 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.8ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 180 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 180 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 180 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 181 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 181 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 181 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (2.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 182 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 182 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 182 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.7ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 183 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 183 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 183 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (2.6ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 184 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 184 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 184 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 185 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 185 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 185 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (5.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 186 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 186 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 186 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.8ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 187 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 187 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 187 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.4ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 188 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 188 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 188 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (2.5ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 189 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 189 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 189 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 190 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 190 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 190 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (2.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 191 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 191 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 191 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 192 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 192 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 192 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.7ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 193 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 193 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 193 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 194 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 194 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 194 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 195 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 195 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 195 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 196 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 196 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 196 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (0.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 197 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 197 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 197 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 198 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 198 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 198 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 199 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 199 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 199 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 200 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 200 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 200 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrderItem Load (1.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."product_id" = 201 /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 201 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = 5 /*application='RailsProject'*/[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 201 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 5 LIMIT 1 /*application='RailsProject'*/[0m
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 7c79518e-9602-4f13-9e80-a226eeb6ed69) to Async(default) with arguments: #<GlobalID:0x000079c2da00cb18 @uri=#<URI::GID gid://rails-project/ActiveStorage::Blob/5>>
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 10 /*application='RailsProject'*/[0m
+  [1m[36mCategory Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = 10 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 11 /*application='RailsProject'*/[0m
+  [1m[36mCategory Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = 11 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 12 /*application='RailsProject'*/[0m
+  [1m[36mCategory Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = 12 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 13 /*application='RailsProject'*/[0m
+  [1m[36mCategory Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = 13 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 23 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 23 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (2.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 24 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 24 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 25 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 25 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 26 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 26 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 27 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 27 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 28 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 28 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 29 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 29 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 30 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 30 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 31 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 31 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 32 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 32 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 34 /*application='RailsProject'*/[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 34 /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mCategory Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Women''s Swimwear' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "description") VALUES ('Women''s Swimwear', '2025-08-03 23:05:19.612801', '2025-08-03 23:05:19.612801', 'Stylish and comfortable swimwear for women including bikinis, one-pieces, and tankinis.') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mCategory Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Men''s Swimwear' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "description") VALUES ('Men''s Swimwear', '2025-08-03 23:05:19.621299', '2025-08-03 23:05:19.621299', 'High-performance swim trunks and board shorts for men.') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mCategory Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Kids'' Swimwear' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "description") VALUES ('Kids'' Swimwear', '2025-08-03 23:05:19.630386', '2025-08-03 23:05:19.630386', 'Fun and safe swimwear for children of all ages.') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mCategory Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Swimwear Accessories' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "description") VALUES ('Swimwear Accessories', '2025-08-03 23:05:19.640583', '2025-08-03 23:05:19.640583', 'Essential accessories for swimming and beach activities.') RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 5 LIMIT 1 /*application='RailsProject'*/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69] Performing ActiveStorage::PurgeJob (Job ID: 7c79518e-9602-4f13-9e80-a226eeb6ed69) from Async(default) enqueued at 2025-08-03T23:05:19.464085267Z with arguments: #<GlobalID:0x000079c2da83d8a0 @uri=#<URI::GID gid://rails-project/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject',job='ActiveStorage%3A%3APurgeJob'*/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69]   [1m[36mActiveStorage::Attachment Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = 5 LIMIT 1 /*application='RailsProject',job='ActiveStorage%3A%3APurgeJob'*/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 5 /*application='RailsProject',job='ActiveStorage%3A%3APurgeJob'*/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'ActiveStorage::Blob' AND "active_storage_attachments"."name" = 'preview_image' LIMIT 1 /*application='RailsProject',job='ActiveStorage%3A%3APurgeJob'*/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69]   [1m[36mActiveStorage::Blob Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 5 /*application='RailsProject',job='ActiveStorage%3A%3APurgeJob'*/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject',job='ActiveStorage%3A%3APurgeJob'*/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: 0i8r2il51xwxvgfpo7hga2477idy[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/0i8r2il51xwxvgfpo7hga2477idy/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7c79518e-9602-4f13-9e80-a226eeb6ed69] Performed ActiveStorage::PurgeJob (Job ID: 7c79518e-9602-4f13-9e80-a226eeb6ed69) from Async(default) in 407.62ms
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'ferdinand@keebler.example' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Madelene Kuhlman' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'ferdinand@keebler.example' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Madelene Kuhlman', 'ferdinand@keebler.example', '$2a$12$eRDTPeeoGj95i87jpfZvreS6ftuKD.HBwdKkh6nIhlsfL50r.aydW', NULL, NULL, NULL, '2025-08-03 23:05:20.395850', '2025-08-03 23:05:20.395850', NULL, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'sharron@streich.test' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Agnes Boyer' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'sharron@streich.test' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Agnes Boyer', 'sharron@streich.test', '$2a$12$l1F44uX/zeYvmRqJ/gZFPOU7QKaOJKK8Z7NXmtc1lHKfvYchLCfS2', NULL, NULL, NULL, '2025-08-03 23:05:20.692427', '2025-08-03 23:05:20.692427', NULL, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'romelia@reichel-oconnell.test' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Ali Mills' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'romelia@reichel-oconnell.test' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Ali Mills', 'romelia@reichel-oconnell.test', '$2a$12$74Nacw805tPHkWt1G7InCOnf3KKP1hZ.RPm9OxtRM0b2y1E3SFFiu', NULL, NULL, NULL, '2025-08-03 23:05:20.979783', '2025-08-03 23:05:20.979783', NULL, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'alyson_renner@sporer.test' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Saul Kihn' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'alyson_renner@sporer.test' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Saul Kihn', 'alyson_renner@sporer.test', '$2a$12$47p5ihNES46EHR2/kkTol.BjMA2yVpVUeDuTBHaDhStbFM1ucrnP6', NULL, NULL, NULL, '2025-08-03 23:05:21.270836', '2025-08-03 23:05:21.270836', NULL, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adan.gutmann@kutch.example' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Jack Green' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adan.gutmann@kutch.example' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Jack Green', 'adan.gutmann@kutch.example', '$2a$12$0hNDbqcrpOntVHSa1m0T0uINhrZrXOasob8uTvTUdSPxBE2KtISAG', NULL, NULL, NULL, '2025-08-03 23:05:21.572127', '2025-08-03 23:05:21.572127', NULL, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'preston.schmitt@franecki.example' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Jonathan Barrows' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'preston.schmitt@franecki.example' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Jonathan Barrows', 'preston.schmitt@franecki.example', '$2a$12$Wd9MOz/FbXJKbJV/9kPmt.7Jwd/h84ABA0W2MEpFPt9MA01tooHP.', NULL, NULL, NULL, '2025-08-03 23:05:21.863724', '2025-08-03 23:05:21.863724', NULL, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'antione@lemke-berge.example' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Rosy Mitchell' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'antione@lemke-berge.example' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Rosy Mitchell', 'antione@lemke-berge.example', '$2a$12$fw7baYGumZckEd.tQGNRfO/nxzyRgDwEZ8YbMLFxjieKFvEPZsS9y', NULL, NULL, NULL, '2025-08-03 23:05:22.145224', '2025-08-03 23:05:22.145224', NULL, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'estell_stiedemann@kiehn-kuhic.test' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Crista Pagac V' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'estell_stiedemann@kiehn-kuhic.test' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Crista Pagac V', 'estell_stiedemann@kiehn-kuhic.test', '$2a$12$9CYzwI9oxZXRjK/pNFVrle0GWpAIENvfBZFjO/vsFcucY/1kM4o8a', NULL, NULL, NULL, '2025-08-03 23:05:22.444241', '2025-08-03 23:05:22.444241', NULL, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'linnea.fahey@wisoky.test' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Vonnie Wuckert' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'linnea.fahey@wisoky.test' LIMIT 1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Vonnie Wuckert', 'linnea.fahey@wisoky.test', '$2a$12$GXTZp0e6l6.UDYkNmuNYquSeZPjLd8jgTDarmx1mML7wX.Kecj/i2', NULL, NULL, NULL, '2025-08-03 23:05:24.106300', '2025-08-03 23:05:24.106300', NULL, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'refugio.oconnell@johnson.test' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Spencer Bernhard' LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'refugio.oconnell@johnson.test' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Spencer Bernhard', 'refugio.oconnell@johnson.test', '$2a$12$fs0043GVp.eTcnVYxAHspOnOVgljGG2lgqzpFHS.lSzh4Aesoa39u', NULL, NULL, NULL, '2025-08-03 23:05:24.369924', '2025-08-03 23:05:24.369924', NULL, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Classic Black One-Piece Swimsuit', 48.35, 'Elegant black one-piece with supportive design. Features removable padding and adjustable straps for the perfect fit. Made from chlorine-resistant fabric. Perspiciatis impedit repellat nihil.', 'XS', 33, NULL, 14, '2025-08-03 23:05:24.373570', '2025-08-03 23:05:24.373570', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Classic Black One-Piece Swimsuit', 82.1, 'Elegant black one-piece with supportive design. Features removable padding and adjustable straps for the perfect fit. Made from chlorine-resistant fabric. Aperiam esse tenetur ut.', 'S', 9, NULL, 14, '2025-08-03 23:05:24.378099', '2025-08-03 23:05:24.378099', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Classic Black One-Piece Swimsuit', 73.47, 'Elegant black one-piece with supportive design. Features removable padding and adjustable straps for the perfect fit. Made from chlorine-resistant fabric. Mollitia non omnis porro.', 'M', 26, NULL, 14, '2025-08-03 23:05:24.385381', '2025-08-03 23:05:24.385381', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (2.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Classic Black One-Piece Swimsuit', 73.62, 'Elegant black one-piece with supportive design. Features removable padding and adjustable straps for the perfect fit. Made from chlorine-resistant fabric. Est iusto repudiandae minus.', 'L', 6, NULL, 14, '2025-08-03 23:05:24.390058', '2025-08-03 23:05:24.390058', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (2.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Classic Black One-Piece Swimsuit', 75.7, 'Elegant black one-piece with supportive design. Features removable padding and adjustable straps for the perfect fit. Made from chlorine-resistant fabric. Ipsum nostrum iste eligendi.', 'XL', 24, NULL, 14, '2025-08-03 23:05:24.396238', '2025-08-03 23:05:24.396238', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Tropical Print Bikini Set', 45.9, 'Vibrant tropical print bikini featuring palm leaves and exotic flowers. Triangle top with tie closure and matching low-rise bottom. Reprehenderit molestiae minus similique.', 'XS', 45, NULL, 14, '2025-08-03 23:05:24.403279', '2025-08-03 23:05:24.403279', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Tropical Print Bikini Set', 63.43, 'Vibrant tropical print bikini featuring palm leaves and exotic flowers. Triangle top with tie closure and matching low-rise bottom. Earum et ad voluptate.', 'S', 20, NULL, 14, '2025-08-03 23:05:24.409422', '2025-08-03 23:05:24.409422', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (2.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Tropical Print Bikini Set', 44.3, 'Vibrant tropical print bikini featuring palm leaves and exotic flowers. Triangle top with tie closure and matching low-rise bottom. Tempora qui cumque delectus.', 'M', 17, NULL, 14, '2025-08-03 23:05:24.415572', '2025-08-03 23:05:24.415572', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Tropical Print Bikini Set', 38.28, 'Vibrant tropical print bikini featuring palm leaves and exotic flowers. Triangle top with tie closure and matching low-rise bottom. Exercitationem aliquam quidem qui.', 'L', 5, NULL, 14, '2025-08-03 23:05:24.423995', '2025-08-03 23:05:24.423995', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (2.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Athletic Cut-Out Swimsuit', 72.89, 'Performance swimsuit with strategic cut-outs for style and functionality. Perfect for lap swimming and water aerobics. Delectus quia rerum ea.', 'S', 24, NULL, 14, '2025-08-03 23:05:24.429311', '2025-08-03 23:05:24.429311', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Athletic Cut-Out Swimsuit', 76.12, 'Performance swimsuit with strategic cut-outs for style and functionality. Perfect for lap swimming and water aerobics. Animi sed aliquid iste.', 'M', 41, NULL, 14, '2025-08-03 23:05:24.438991', '2025-08-03 23:05:24.438991', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Athletic Cut-Out Swimsuit', 58.08, 'Performance swimsuit with strategic cut-outs for style and functionality. Perfect for lap swimming and water aerobics. Quia deleniti error nesciunt.', 'L', 18, NULL, 14, '2025-08-03 23:05:24.444352', '2025-08-03 23:05:24.444352', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Athletic Cut-Out Swimsuit', 86.55, 'Performance swimsuit with strategic cut-outs for style and functionality. Perfect for lap swimming and water aerobics. Cum aut eligendi autem.', 'XL', 13, NULL, 14, '2025-08-03 23:05:24.451932', '2025-08-03 23:05:24.451932', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Quick-Dry Board Shorts', 44.48, 'Professional board shorts with 4-way stretch fabric and quick-dry technology. Features secure velcro and drawstring closure. Consequatur assumenda velit excepturi.', 'S', 22, NULL, 15, '2025-08-03 23:05:24.457695', '2025-08-03 23:05:24.457695', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Quick-Dry Board Shorts', 55.34, 'Professional board shorts with 4-way stretch fabric and quick-dry technology. Features secure velcro and drawstring closure. Rerum qui ipsam suscipit.', 'M', 12, NULL, 15, '2025-08-03 23:05:24.472760', '2025-08-03 23:05:24.472760', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Quick-Dry Board Shorts', 74.62, 'Professional board shorts with 4-way stretch fabric and quick-dry technology. Features secure velcro and drawstring closure. Aspernatur atque totam ut.', 'L', 23, NULL, 15, '2025-08-03 23:05:24.478000', '2025-08-03 23:05:24.478000', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (2.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Quick-Dry Board Shorts', 73.14, 'Professional board shorts with 4-way stretch fabric and quick-dry technology. Features secure velcro and drawstring closure. Et omnis et impedit.', 'XL', 17, NULL, 15, '2025-08-03 23:05:24.483290', '2025-08-03 23:05:24.483290', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Quick-Dry Board Shorts', 58.26, 'Professional board shorts with 4-way stretch fabric and quick-dry technology. Features secure velcro and drawstring closure. Omnis hic harum provident.', 'XXL', 46, NULL, 15, '2025-08-03 23:05:24.490029', '2025-08-03 23:05:24.490029', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (2.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Competition Swim Briefs', 34.82, 'High-performance swim briefs designed for competitive swimming. Chlorine-resistant with compression fit. Aut corrupti eligendi ratione.', 'S', 34, NULL, 15, '2025-08-03 23:05:24.495781', '2025-08-03 23:05:24.495781', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Competition Swim Briefs', 36.3, 'High-performance swim briefs designed for competitive swimming. Chlorine-resistant with compression fit. Distinctio fugiat quas veniam.', 'M', 42, NULL, 15, '2025-08-03 23:05:24.502673', '2025-08-03 23:05:24.502673', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Competition Swim Briefs', 26.82, 'High-performance swim briefs designed for competitive swimming. Chlorine-resistant with compression fit. Aliquid qui reiciendis itaque.', 'L', 26, NULL, 15, '2025-08-03 23:05:24.507278', '2025-08-03 23:05:24.507278', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Competition Swim Briefs', 44.6, 'High-performance swim briefs designed for competitive swimming. Chlorine-resistant with compression fit. Nemo eveniet rem esse.', 'XL', 32, NULL, 15, '2025-08-03 23:05:24.513117', '2025-08-03 23:05:24.513117', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Mermaid Tail Swimsuit', 30.99, 'Magical mermaid-inspired one-piece swimsuit with shimmery scales pattern. UV protection UPF 50+. Mollitia expedita optio distinctio.', '2T', 6, NULL, 16, '2025-08-03 23:05:24.520682', '2025-08-03 23:05:24.520682', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Mermaid Tail Swimsuit', 27.16, 'Magical mermaid-inspired one-piece swimsuit with shimmery scales pattern. UV protection UPF 50+. Ut delectus commodi ratione.', '3T', 11, NULL, 16, '2025-08-03 23:05:24.525437', '2025-08-03 23:05:24.525437', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Mermaid Tail Swimsuit', 33.78, 'Magical mermaid-inspired one-piece swimsuit with shimmery scales pattern. UV protection UPF 50+. Laborum dicta ea placeat.', '4T', 45, NULL, 16, '2025-08-03 23:05:24.530621', '2025-08-03 23:05:24.530621', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Mermaid Tail Swimsuit', 26.88, 'Magical mermaid-inspired one-piece swimsuit with shimmery scales pattern. UV protection UPF 50+. Quis quaerat maiores rerum.', '5T', 25, NULL, 16, '2025-08-03 23:05:24.537003', '2025-08-03 23:05:24.537003', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Mermaid Tail Swimsuit', 23.19, 'Magical mermaid-inspired one-piece swimsuit with shimmery scales pattern. UV protection UPF 50+. Quasi ut pariatur aut.', '6', 37, NULL, 16, '2025-08-03 23:05:24.541759', '2025-08-03 23:05:24.541759', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Mermaid Tail Swimsuit', 24.72, 'Magical mermaid-inspired one-piece swimsuit with shimmery scales pattern. UV protection UPF 50+. Nemo quia assumenda autem.', '7', 36, NULL, 16, '2025-08-03 23:05:24.547280', '2025-08-03 23:05:24.547280', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Mermaid Tail Swimsuit', 24.42, 'Magical mermaid-inspired one-piece swimsuit with shimmery scales pattern. UV protection UPF 50+. Voluptates sit voluptatem quod.', '8', 22, NULL, 16, '2025-08-03 23:05:24.553847', '2025-08-03 23:05:24.553847', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Superhero Swim Trunks', 31.16, 'Fun superhero-themed swim trunks with bold graphics. Quick-dry fabric with mesh lining. Quod rerum sed tempore.', '2T', 46, NULL, 16, '2025-08-03 23:05:24.559532', '2025-08-03 23:05:24.559532', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (2.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Superhero Swim Trunks', 20.26, 'Fun superhero-themed swim trunks with bold graphics. Quick-dry fabric with mesh lining. Numquam consequuntur reiciendis aspernatur.', '3T', 12, NULL, 16, '2025-08-03 23:05:24.564732', '2025-08-03 23:05:24.564732', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Superhero Swim Trunks', 27.54, 'Fun superhero-themed swim trunks with bold graphics. Quick-dry fabric with mesh lining. Et qui sit aspernatur.', '4T', 43, NULL, 16, '2025-08-03 23:05:24.573331', '2025-08-03 23:05:24.573331', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Superhero Swim Trunks', 23.9, 'Fun superhero-themed swim trunks with bold graphics. Quick-dry fabric with mesh lining. Aut culpa quod in.', '5T', 6, NULL, 16, '2025-08-03 23:05:24.578161', '2025-08-03 23:05:24.578161', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Superhero Swim Trunks', 19.34, 'Fun superhero-themed swim trunks with bold graphics. Quick-dry fabric with mesh lining. Necessitatibus sint enim repellendus.', '6', 13, NULL, 16, '2025-08-03 23:05:24.583498', '2025-08-03 23:05:24.583498', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (9.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Superhero Swim Trunks', 19.0, 'Fun superhero-themed swim trunks with bold graphics. Quick-dry fabric with mesh lining. Corrupti nulla enim est.', '7', 50, NULL, 16, '2025-08-03 23:05:24.589084', '2025-08-03 23:05:24.589084', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Professional Swimming Goggles', 26.87, 'Anti-fog swimming goggles with UV protection and adjustable strap. Suitable for pool and open water. Qui sed et beatae.', 'One Size', 34, NULL, 17, '2025-08-03 23:05:24.605028', '2025-08-03 23:05:24.605028', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Quick-Dry Beach Towel', 33.01, 'Ultra-absorbent microfiber beach towel that dries 3x faster than cotton. Sand-resistant and compact. Aut unde id qui.', 'Large', 11, NULL, 17, '2025-08-03 23:05:24.610849', '2025-08-03 23:05:24.610849', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mProduct Create (2.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "size", "stock", "image_url", "category_id", "created_at", "updated_at", "active", "on_sale", "sale_price") VALUES ('Waterproof Phone Pouch', 23.72, 'Universal waterproof phone case with touch-sensitive screen. Rated IPX8 for complete water protection. Neque et vitae repellat.', 'Universal', 22, NULL, 17, '2025-08-03 23:05:24.617249', '2025-08-03 23:05:24.617249', 1, 0, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='RailsProject'*/[0m

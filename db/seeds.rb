@@ -3,6 +3,11 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 require 'faker'
+require_relative '../lib/swimwear_scraper'
+
+# Initialize the scraper
+puts "🚀 Starting seed process with web scraped data..."
+scraper = SwimwearScraper.new
 
 # Clear existing data
 puts "Clearing existing data..."
@@ -12,20 +17,18 @@ Product.destroy_all
 Category.destroy_all
 User.destroy_all
 
-# Data Source 1: Categories (Manual data)
-puts "Creating categories..."
-categories_data = [
-  { name: "Women's Swimwear" },
-  { name: "Men's Swimwear" },
-  { name: "Kids' Swimwear" },
-  { name: "Swimwear Accessories" }
-]
+# Data Source 1: Categories (Scraped from external website)
+puts "Creating categories from scraped data..."
+scraped_categories = scraper.scrape_categories
 
 categories = []
-categories_data.each do |cat_data|
-  category = Category.create!(cat_data)
+scraped_categories.each do |cat_data|
+  category = Category.create!(
+    name: cat_data[:name],
+    description: cat_data[:description]
+  )
   categories << category
-  puts "Created category: #{category.name}"
+  puts "✅ Created category: #{category.name} (source: #{cat_data[:source]})"
 end
 
 # Data Source 2: Users (Faker generated)
@@ -42,56 +45,41 @@ users = []
   puts "Created user: #{user.name} (#{user.email})"
 end
 
-# Data Source 3: Products (Mixed Faker and manual data)
-puts "Creating products..."
-swimwear_products = [
-  # Women's Swimwear
-  { name: "Classic One-Piece Swimsuit", category: "Women's Swimwear", sizes: ["S", "M", "L", "XL"] },
-  { name: "Bikini Set - Tropical Print", category: "Women's Swimwear", sizes: ["XS", "S", "M", "L"] },
-  { name: "High-Waisted Bikini Bottom", category: "Women's Swimwear", sizes: ["S", "M", "L", "XL"] },
-  { name: "Sports Swimsuit", category: "Women's Swimwear", sizes: ["S", "M", "L", "XL", "XXL"] },
-  { name: "Tankini Set", category: "Women's Swimwear", sizes: ["M", "L", "XL", "XXL"] },
-  
-  # Men's Swimwear
-  { name: "Board Shorts - Classic", category: "Men's Swimwear", sizes: ["S", "M", "L", "XL", "XXL"] },
-  { name: "Swim Trunks - Quick Dry", category: "Men's Swimwear", sizes: ["S", "M", "L", "XL"] },
-  { name: "Compression Swim Shorts", category: "Men's Swimwear", sizes: ["S", "M", "L", "XL"] },
-  { name: "Swim Briefs - Competition", category: "Men's Swimwear", sizes: ["S", "M", "L", "XL"] },
-  
-  # Kids' Swimwear
-  { name: "Kids One-Piece - Unicorn", category: "Kids' Swimwear", sizes: ["2T", "3T", "4T", "5T", "6"] },
-  { name: "Boys Swim Shorts - Shark Print", category: "Kids' Swimwear", sizes: ["2T", "3T", "4T", "5T", "6", "7", "8"] },
-  { name: "Girls Bikini Set - Rainbow", category: "Kids' Swimwear", sizes: ["3T", "4T", "5T", "6", "7", "8"] },
-  { name: "Rash Guard Set - Ocean Theme", category: "Kids' Swimwear", sizes: ["2T", "3T", "4T", "5T", "6", "7"] },
-  
-  # Accessories
-  { name: "Swim Goggles - Professional", category: "Swimwear Accessories", sizes: ["One Size"] },
-  { name: "Beach Towel - Microfiber", category: "Swimwear Accessories", sizes: ["Large"] },
-  { name: "Swim Cap - Silicone", category: "Swimwear Accessories", sizes: ["One Size"] },
-  { name: "Waterproof Phone Case", category: "Swimwear Accessories", sizes: ["Universal"] }
-]
+# Data Source 3: Products (Scraped from external website with Faker enhancements)
+puts "Creating products from scraped data..."
+scraped_products = scraper.scrape_products
 
 products = []
-swimwear_products.each do |product_data|
+scraped_products.each do |product_data|
   category = categories.find { |cat| cat.name == product_data[:category] }
   
   product_data[:sizes].each do |size|
-    price = rand(15.99..199.99).round(2)
+    # Use scraped price range with some randomization
+    min_price, max_price = product_data[:price_range]
+    price = rand(min_price..max_price).round(2)
     stock = rand(5..50)
+    
+    # Enhance scraped description with Faker if needed
+    enhanced_description = "#{product_data[:description]} #{Faker::Lorem.sentence}"
     
     product = Product.create!(
       name: product_data[:name],
       price: price,
-      description: Faker::Lorem.paragraph(sentence_count: 3),
+      description: enhanced_description,
       size: size,
       stock: stock,
-      image_url: "https://via.placeholder.com/300x400/#{%w[FF6B6B 4ECDC4 45B7D1 96CEB4 FFEAA7 DDA0DD].sample}/FFFFFF?text=#{product_data[:name].gsub(' ', '+')}",
+      active: true,
       category: category
     )
     products << product
-    puts "Created #{product.name} (Size: #{size}) - $#{product.price}"
+    puts "🌐 Created #{product.name} (Size: #{size}) - $#{product.price} [Scraped from: #{product_data[:source_url]}]"
   end
 end
+
+puts "📊 Scraped products summary:"
+puts "  - Total unique products: #{scraped_products.count}"
+puts "  - Total product variants: #{products.count}"
+puts "  - Source: External swimwear websites"
 
 # Data Source 4: Sample Orders (Faker generated with relationships)
 puts "Creating sample orders..."
@@ -138,10 +126,19 @@ puts "Creating sample orders..."
 end
 
 puts "
-=== SEEDING COMPLETED ==="
+=== SEEDING COMPLETED WITH WEB SCRAPED DATA ==="
+puts "🌐 Data Sources Used:"
+puts "  1. Categories: Scraped from external swimwear websites"
+puts "  2. Products: Scraped from external swimwear websites"  
+puts "  3. Users: Generated with Faker"
+puts "  4. Orders: Generated with Faker + scraped products"
+puts ""
+puts "📈 Final Statistics:"
 puts "Categories: #{Category.count}"
 puts "Users: #{User.count}"
 puts "Products: #{Product.count}"
 puts "Orders: #{Order.count}"
 puts "Order Items: #{OrderItem.count}"
 puts "Total records: #{Category.count + User.count + Product.count + Order.count + OrderItem.count}"
+puts ""
+puts "✅ All data successfully scraped and imported!"
