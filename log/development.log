@@ -10671,3 +10671,34 @@ Processing by Admin::DashboardController#index as HTML
 Completed 200 OK in 29ms (Views: 15.0ms | ActiveRecord: 1.4ms (14 queries, 3 cached) | GC: 2.3ms)
 
 
+Started GET "/admin/products" for 127.0.0.1 at 2025-08-03 15:52:09 -0500
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/index.html.erb within layouts/admin
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 20 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (7, 8) /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:60
+  Rendered admin/products/index.html.erb within layouts/admin (Duration: 11.5ms | GC: 0.0ms)
+  Rendered layout layouts/admin.html.erb (Duration: 12.5ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 12.3ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?id=fdec67d7-3e11-459e-b412-051924e19667&vscodeBrowserReqId=1754254495021" for 127.0.0.1 at 2025-08-03 15:54:55 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"fdec67d7-3e11-459e-b412-051924e19667", "vscodeBrowserReqId"=>"1754254495021"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:19
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 6 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 8.7ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
