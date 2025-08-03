@@ -37,6 +37,19 @@
                 { class: "form-select" } %>
           </div>
           
+          <div class="col-md-2">
+            <%= f.label :filter, "Special filters", class: "form-label" %>
+            <%= f.select :filter, 
+                options_for_select([
+                  ['All Products', ''],
+                  ['On Sale', 'sale'],
+                  ['New Products', 'new'],
+                  ['Recently Updated', 'updated']
+                ], params[:filter]),
+                {}, 
+                { class: "form-select" } %>
+          </div>
+          
           <div class="col-md-2 d-flex align-items-end">
             <div class="d-grid w-100">
               <%= f.submit "Search", class: "btn btn-primary" %>
@@ -44,7 +57,7 @@
           </div>
         </div>
         
-        <% if params[:search].present? || params[:category].present? %>
+        <% if params[:search].present? || params[:category].present? || params[:filter].present? %>
           <div class="mt-3">
             <%= link_to "Clear all filters", products_path, class: "btn btn-outline-secondary btn-sm" %>
           </div>
@@ -54,27 +67,28 @@
   </div>
   </div>
 
-  <!-- Search Results Info -->
-  <% if params[:search].present? || params[:category].present? %>
+    <!-- Search Results Info -->
+  <% if params[:search].present? || params[:category].present? || params[:filter].present? %>
     <div class="alert alert-info d-flex justify-content-between align-items-center">
       <div>
         <i class="fas fa-info-circle me-2"></i>
-        <% if params[:search].present? && params[:category].present? %>
-          Search results for "<strong><%= params[:search] %></strong>" in category "<strong><%= params[:category] %></strong>"
-        <% elsif params[:search].present? %>
-          Search results for "<strong><%= params[:search] %></strong>" (all categories)
-        <% else %>
-          Products in category "<strong><%= params[:category] %></strong>"
+        <% filter_info = [] %>
+        <% filter_info << "searching for \"#{params[:search]}\"" if params[:search].present? %>
+        <% filter_info << "in category \"#{params[:category]}\"" if params[:category].present? %>
+        <% case params[:filter]
+           when 'sale' %>
+          <% filter_info << "showing products on sale" %>
+        <% when 'new' %>
+          <% filter_info << "showing new products" %>
+        <% when 'updated' %>
+          <% filter_info << "showing recently updated products" %>
         <% end %>
-        <br>
-        <small><%= pluralize(@products.total_count, 'product') %> found</small>
+        
+        Showing <%= pluralize(@products.count, 'product') %>
+        <% if filter_info.any? %>
+          <%= filter_info.join(', ') %>
+        <% end %>
       </div>
-      <%= link_to "Show all products", products_path, class: "btn btn-sm btn-outline-primary" %>
-    </div>
-  <% else %>
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2>All Products</h2>
-      <small class="text-muted"><%= pluralize(@products.total_count, 'product') %> available</small>
     </div>
   <% end %>
 

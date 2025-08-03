@@ -19,9 +19,9 @@ class Product < ApplicationRecord
   scope :low_stock, -> { where('stock > 0 AND stock <= 5') }
   scope :on_sale, -> { where(on_sale: true) }
   scope :new_products, -> { where('created_at >= ?', 3.days.ago) }
-  scope :recently_updated, -> { where('updated_at >= ? AND created_at < ?', 3.days.ago, 3.days.ago) }
+  scope :recently_updated, -> { where('updated_at >= ? AND updated_at != created_at', 1.day.ago) }
   scope :by_category, ->(category_id) { where(category_id: category_id) if category_id.present? }
-  scope :search_by_text, ->(query) { where("name ILIKE ? OR description ILIKE ?", "%#{query}%", "%#{query}%") if query.present? }
+  scope :search_by_text, ->(query) { where("name LIKE ? OR description LIKE ?", "%#{query}%", "%#{query}%") if query.present? }
 
   # Instance methods
   def in_stock?
