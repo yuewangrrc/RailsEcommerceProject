@@ -19,7 +19,7 @@
         <%= link_to "View Details", product_path(product), class: "btn btn-outline-primary btn-sm" %>
         <% if user_signed_in? && product.stock > 0 %>
           <%= link_to "Add to Cart", add_to_cart_path(product), 
-              method: :post, class: "btn btn-primary btn-sm" %>
+              data: { turbo_method: :post }, class: "btn btn-primary btn-sm" %>
         <% end %>
       </div>
     </div>

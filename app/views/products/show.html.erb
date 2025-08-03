@@ -50,7 +50,7 @@
         <% if user_signed_in? %>
           <% if @product.stock > 0 %>
             <%= link_to "Add to Cart", add_to_cart_path(@product), 
-                method: :post, class: "btn btn-primary btn-lg" %>
+                data: { turbo_method: :post }, class: "btn btn-primary btn-lg" %>
           <% else %>
             <button class="btn btn-secondary btn-lg" disabled>Out of Stock</button>
           <% end %>
