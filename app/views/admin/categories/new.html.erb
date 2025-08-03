@@ -1,0 +1,41 @@
+<% content_for :title, "Add New Category" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>Add New Category</h1>
+  <%= link_to "Back to Categories", admin_categories_path, class: "btn btn-secondary" %>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <%= form_with model: [:admin, @category], local: true, class: "row g-3" do |f| %>
+      <% if @category.errors.any? %>
+        <div class="col-12">
+          <div class="alert alert-danger">
+            <h6>Please fix the following errors:</h6>
+            <ul class="mb-0">
+              <% @category.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="col-12">
+        <%= f.label :name, class: "form-label" %>
+        <%= f.text_field :name, class: "form-control", placeholder: "e.g., Women's Swimwear" %>
+      </div>
+
+      <div class="col-12">
+        <%= f.label :description, class: "form-label" %>
+        <%= f.text_area :description, rows: 4, class: "form-control", 
+            placeholder: "Optional description for this category..." %>
+      </div>
+
+      <div class="col-12">
+        <%= f.submit "Create Category", class: "btn btn-primary" %>
+        <%= link_to "Cancel", admin_categories_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

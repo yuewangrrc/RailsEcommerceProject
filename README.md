@@ -136,7 +136,52 @@ rails server
 Access the admin dashboard at `/admin` with administrator credentials.
 Default admin user can be created through the Rails console or seeded data.
 
-## 📊 Project Status
+## � API Routes
+
+### Core Application Routes
+```
+GET    /                           # Homepage
+GET    /about                      # About page
+GET    /products                   # Product catalog
+GET    /products/:id               # Product details
+GET    /products/search            # Product search
+GET    /categories                 # Category listing
+GET    /categories/:id             # Category details
+```
+
+### Shopping Cart & Checkout
+```
+GET    /cart                       # View shopping cart
+POST   /cart/add/:product_id       # Add item to cart
+PATCH  /cart/update/:product_id    # Update cart item quantity
+DELETE /cart/remove/:product_id    # Remove item from cart
+DELETE /cart/clear                 # Clear entire cart
+GET    /checkout                   # Checkout page
+POST   /checkout                   # Process order
+GET    /orders/:id/confirmation    # Order confirmation
+```
+
+### Admin Panel
+```
+GET    /admin                      # Admin dashboard
+GET    /admin/products             # Manage products
+GET    /admin/categories           # Manage categories
+POST   /admin/products             # Create product
+PATCH  /admin/products/:id         # Update product
+DELETE /admin/products/:id         # Delete product
+```
+
+### User Authentication (Devise)
+```
+GET    /users/sign_in              # Login page
+POST   /users/sign_in              # Process login
+DELETE /users/sign_out             # Logout
+GET    /users/sign_up              # Registration page
+POST   /users                      # Process registration
+GET    /users/edit                 # Edit profile
+```
+
+## �📊 Project Status
 
 Current implementation includes all core e-commerce functionality:
 - ✅ Product management and display

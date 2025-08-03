@@ -10,6 +10,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def new
     @product = Product.new
+    @product.category_id = params[:category_id] if params[:category_id]
     @categories = Category.all
   end
 

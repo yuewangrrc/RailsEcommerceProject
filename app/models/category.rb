@@ -4,4 +4,5 @@ class Category < ApplicationRecord
 
   # Validations
   validates :name, presence: true, uniqueness: true, length: { minimum: 2 }
+  validates :description, length: { maximum: 500 }, allow_blank: true
 end
