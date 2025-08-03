@@ -46,194 +46,143 @@
   </div>
 </div>
 
-<!-- Bulk Actions Form -->
-<%= form_with url: bulk_update_admin_products_path, method: :patch, local: true do |f| %>
-  <div class="card">
-    <div class="card-header d-flex justify-content-between align-items-center">
-      <h5 class="mb-0">Products List</h5>
-      <div class="d-flex gap-2 align-items-center">
-        <%= f.select :bulk_action, 
-            options_for_select([
-              ['Select Action...', ''],
-              ['Delete Selected', 'delete'],
-              ['Mark Out of Stock', 'mark_out_of_stock'],
-              ['Activate Selected', 'activate'],
-              ['Deactivate Selected', 'deactivate']
-            ]), 
-            {}, { class: "form-select form-select-sm", style: "width: 180px;" } %>
-        <%= f.submit "Apply", class: "btn btn-sm btn-warning", id: "bulk-action-btn", 
-            data: { confirm: "Are you sure you want to apply this action to selected products?" } %>
-      </div>
-    </div>
-    <div class="card-body p-0">
-      <div class="table-responsive">
-        <table class="table table-striped mb-0">
-          <thead class="table-dark">
-            <tr>
-              <th style="width: 40px;">
-                <input type="checkbox" id="select-all" class="form-check-input">
-              </th>
-              <th style="width: 80px;">Image</th>
-              <th>Product</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Stock</th>
-              <th>Status</th>
-              <th style="width: 120px;">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% if @products.any? %>
-              <% @products.each do |product| %>
-                <tr>
-                  <td>
-                    <%= check_box_tag "product_ids[]", product.id, false, 
-                        class: "form-check-input product-checkbox" %>
-                  </td>
-                  <td>
-                    <img src="<%= product.image_url %>" alt="<%= product.name %>" 
-                         style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
-                  </td>
-                  <td>
-                    <div>
-                      <strong><%= link_to product.name, admin_product_path(product), 
-                          class: "text-decoration-none" %></strong>
-                      <br>
-                      <small class="text-muted">Size: <%= product.size %></small>
-                    </div>
-                  </td>
-                  <td>
-                    <span class="badge bg-info"><%= product.category.name %></span>
-                  </td>
-                  <td>
-                    <strong>$<%= product.price %></strong>
-                  </td>
-                  <td>
-                    <span class="badge bg-<%= product.stock_status_class %>">
-                      <%= product.stock_status %> (<%= product.stock %>)
-                    </span>
-                  </td>
-                  <td>
-                    <% if product.active? %>
-                      <span class="badge bg-success">Active</span>
-                    <% else %>
-                      <span class="badge bg-secondary">Inactive</span>
-                    <% end %>
-                  </td>
-                  <td>
-                    <div class="btn-group btn-group-sm">
-                      <%= link_to admin_product_path(product), class: "btn btn-outline-primary btn-sm" do %>
-                        <i class="fas fa-eye"></i>
-                      <% end %>
-                      <%= link_to edit_admin_product_path(product), class: "btn btn-outline-warning btn-sm" do %>
-                        <i class="fas fa-edit"></i>
-                      <% end %>
-                      <%= link_to admin_product_path(product), method: :delete,
-                          class: "btn btn-outline-danger btn-sm",
-                          data: { 
-                            turbo_method: :delete,
-                            turbo_confirm: "Are you sure you want to delete #{product.name}?" 
-                          } do %>
-                        <i class="fas fa-trash"></i>
-                      <% end %>
-                    </div>
-                  </td>
-                </tr>
-              <% end %>
-            <% else %>
+<!-- Products Table -->
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h5 class="mb-0">Products List</h5>
+  </div>
+  <div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table table-striped mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th style="width: 80px;">Image</th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Status</th>
+            <th style="width: 120px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @products.any? %>
+            <% @products.each do |product| %>
               <tr>
-                <td colspan="8" class="text-center py-5">
-                  <div class="text-muted">
-                    <i class="fas fa-box-open fa-3x mb-3"></i>
-                    <h5>No products found</h5>
-                    <p>Try adjusting your search criteria or <%= link_to "add a new product", new_admin_product_path %>.</p>
+                <td>
+                  <img src="<%= product.image_url %>" alt="<%= product.name %>" 
+                       style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
+                </td>
+                <td>
+                  <div>
+                    <strong><%= link_to product.name, admin_product_path(product), 
+                        class: "text-decoration-none" %></strong>
+                    <br>
+                    <small class="text-muted">Size: <%= product.size %></small>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge bg-info"><%= product.category.name %></span>
+                </td>
+                <td>
+                  <strong>$<%= product.price %></strong>
+                </td>
+                <td>
+                  <span class="badge bg-<%= product.stock_status_class %>">
+                    <%= product.stock_status %> (<%= product.stock %>)
+                  </span>
+                </td>
+                <td>
+                  <% if product.active? %>
+                    <span class="badge bg-success">Active</span>
+                  <% else %>
+                    <span class="badge bg-secondary">Inactive</span>
+                  <% end %>
+                </td>
+                <td>
+                  <div class="btn-group btn-group-sm">
+                    <%= link_to admin_product_path(product), class: "btn btn-outline-primary btn-sm" do %>
+                      <i class="fas fa-eye"></i>
+                    <% end %>
+                    <%= link_to edit_admin_product_path(product), class: "btn btn-outline-warning btn-sm" do %>
+                      <i class="fas fa-edit"></i>
+                    <% end %>
+                    <%= link_to admin_product_path(product),
+                        class: "btn btn-outline-danger btn-sm",
+                        data: { 
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure you want to delete #{product.name}?" 
+                        } do %>
+                      <i class="fas fa-trash"></i>
+                    <% end %>
                   </div>
                 </td>
               </tr>
             <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-<!-- Pagination -->
-<% if @products.respond_to?(:total_pages) && @products.total_pages > 1 %>
-  <div class="d-flex justify-content-center mt-4">
-    <%= paginate @products, theme: 'bootstrap-5' %>
-  </div>
-<% end %>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Select all checkbox functionality
-  const selectAllCheckbox = document.getElementById('select-all');
-  const productCheckboxes = document.querySelectorAll('.product-checkbox');
-  const bulkActionBtn = document.getElementById('bulk-action-btn');
-
-  selectAllCheckbox.addEventListener('change', function() {
-    productCheckboxes.forEach(checkbox => {
-      checkbox.checked = this.checked;
-    });
-    toggleBulkActionButton();
-  });
-
-  productCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-      const checkedBoxes = document.querySelectorAll('.product-checkbox:checked');
-      selectAllCheckbox.checked = checkedBoxes.length === productCheckboxes.length;
-      selectAllCheckbox.indeterminate = checkedBoxes.length > 0 && checkedBoxes.length < productCheckboxes.length;
-      toggleBulkActionButton();
-    });
-  });
-
-  function toggleBulkActionButton() {
-    const checkedBoxes = document.querySelectorAll('.product-checkbox:checked');
-    bulkActionBtn.disabled = checkedBoxes.length === 0;
-  }
-
-  // Initially disable bulk action button
-  toggleBulkActionButton();
-});
-</script>
+          <% else %>
             <tr>
-              <td>
-                <img src="<%= product.image_url %>" alt="<%= product.name %>" style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
-              </td>
-              <td>
-                <strong><%= product.name %></strong><br>
-                <small class="text-muted"><%= truncate(product.description, length: 50) %></small>
-              </td>
-              <td><%= product.category.name %></td>
-              <td><span class="badge bg-secondary"><%= product.size %></span></td>
-              <td>$<%= product.price %></td>
-              <td>
-                <% if product.stock > 5 %>
-                  <span class="badge bg-success"><%= product.stock %></span>
-                <% elsif product.stock > 0 %>
-                  <span class="badge bg-warning"><%= product.stock %></span>
-                <% else %>
-                  <span class="badge bg-danger">Out of Stock</span>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to "View", admin_product_path(product), class: "btn btn-sm btn-outline-info" %>
-                <%= link_to "Edit", edit_admin_product_path(product), class: "btn btn-sm btn-outline-primary" %>
-                <%= link_to "Delete", admin_product_path(product), 
-                    data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this product?" },
-                    class: "btn btn-sm btn-outline-danger" %>
+              <td colspan="7" class="text-center py-5">
+                <div class="text-muted">
+                  <i class="fas fa-box-open fa-3x mb-3"></i>
+                  <h5>No products found</h5>
+                  <p>Try adjusting your search criteria or <%= link_to "add a new product", new_admin_product_path %>.</p>
+                </div>
               </td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
-    
-    <% if @products.respond_to?(:current_page) %>
-      <div class="d-flex justify-content-center mt-4">
-        <%= paginate @products %>
-      </div>
-    <% end %>
   </div>
 </div>
+
+<!-- Pagination -->
+<% if @products.respond_to?(:total_pages) && @products.total_pages > 1 %>
+  <div class="d-flex justify-content-center mt-4">
+    <nav aria-label="Products pagination">
+      <ul class="pagination">
+        <% if @products.prev_page %>
+          <li class="page-item">
+            <%= link_to "Previous", admin_products_path(page: @products.prev_page, search: params[:search], 
+                category_id: params[:category_id], stock_filter: params[:stock_filter]), 
+                class: "page-link" %>
+          </li>
+        <% else %>
+          <li class="page-item disabled">
+            <span class="page-link">Previous</span>
+          </li>
+        <% end %>
+
+        <% (1..@products.total_pages).each do |page| %>
+          <% if page == @products.current_page %>
+            <li class="page-item active">
+              <span class="page-link"><%= page %></span>
+            </li>
+          <% elsif (page - @products.current_page).abs <= 2 || page == 1 || page == @products.total_pages %>
+            <li class="page-item">
+              <%= link_to page, admin_products_path(page: page, search: params[:search], 
+                  category_id: params[:category_id], stock_filter: params[:stock_filter]), 
+                  class: "page-link" %>
+            </li>
+          <% elsif (page - @products.current_page).abs == 3 %>
+            <li class="page-item disabled">
+              <span class="page-link">...</span>
+            </li>
+          <% end %>
+        <% end %>
+
+        <% if @products.next_page %>
+          <li class="page-item">
+            <%= link_to "Next", admin_products_path(page: @products.next_page, search: params[:search], 
+                category_id: params[:category_id], stock_filter: params[:stock_filter]), 
+                class: "page-link" %>
+          </li>
+        <% else %>
+          <li class="page-item disabled">
+            <span class="page-link">Next</span>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+<% end %>
