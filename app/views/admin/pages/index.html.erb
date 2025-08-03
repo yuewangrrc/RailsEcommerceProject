@@ -1,0 +1,56 @@
+<% content_for :title, "Manage Pages" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>Manage Website Pages</h1>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Title</th>
+            <th>Last Updated</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @pages.each do |page| %>
+            <tr>
+              <td>
+                <span class="badge bg-primary"><%= page.slug.capitalize %></span>
+              </td>
+              <td><%= page.title %></td>
+              <td>
+                <small class="text-muted">
+                  <%= page.updated_at.strftime("%B %d, %Y at %I:%M %p") %>
+                </small>
+              </td>
+              <td>
+                <div class="btn-group" role="group">
+                  <%= link_to "Edit", edit_admin_page_path(page.slug), 
+                      class: "btn btn-outline-primary btn-sm" %>
+                  <%= link_to "View", 
+                      page.slug == 'about' ? about_path : contact_path, 
+                      class: "btn btn-outline-secondary btn-sm", 
+                      target: "_blank" %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4">
+  <div class="alert alert-info">
+    <i class="fas fa-info-circle me-2"></i>
+    <strong>Note:</strong> These pages can be viewed by all visitors at 
+    <%= link_to "/about", about_path, target: "_blank" %> and 
+    <%= link_to "/contact", contact_path, target: "_blank" %>.
+  </div>
+</div>

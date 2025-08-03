@@ -196,3 +196,8 @@ Current implementation includes all core e-commerce functionality:
 
 This project follows standard Rails conventions and best practices. 
 Contributions are welcome through pull requests with proper testing.
+
+
+## test user
+邮箱： admin@swimi.com
+密码： admin123

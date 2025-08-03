@@ -17923,3 +17923,87 @@ Completed 200 OK in 269ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cach
   ↳ app/models/product.rb:66:in `primary_image'
   [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 140 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
   ↳ app/models/product.rb:66:in `primary_image'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Migrating to CreatePages (20250803224124)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "pages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "slug" varchar, "title" varchar, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250803224124') RETURNING "version" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+  [1m[36mPage Load (0.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."slug" = 'about' LIMIT 1 /*application='RailsProject'*/[0m
+  ↳ app/models/page.rb:8:in `find_by_slug'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  ↳ app/models/page.rb:20:in `create_default_page'
+  [1m[36mPage Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pages" WHERE "pages"."slug" = 'about' LIMIT 1 /*application='RailsProject'*/[0m
+  ↳ app/models/page.rb:20:in `create_default_page'
+  [1m[36mPage Create (0.2ms)[0m  [1m[32mINSERT INTO "pages" ("slug", "title", "content", "created_at", "updated_at") VALUES ('about', 'About Us', '<h3>Our Story</h3>
+<p>Swimi is your premier destination for high-quality swimwear for the entire family. Founded with a passion for aquatic lifestyle, we''ve been providing swimmers, beach-goers, and water sports enthusiasts with the best swimwear since our inception.</p>
+
+<p>Whether you''re looking for competitive swimwear, casual beachwear, or fun kids'' designs, our curated collection ensures that everyone can find their perfect fit and style.</p>
+
+<h3>Our Mission</h3>
+<p>To provide high-quality, comfortable, and stylish swimwear that enhances your aquatic experience while promoting an active and healthy lifestyle.</p>
+
+<h3>Why Choose Swimi?</h3>
+<ul>
+  <li>Premium quality materials</li>
+  <li>Wide range of sizes and styles</li>
+  <li>Competitive prices</li>
+  <li>Excellent customer service</li>
+  <li>Fast and reliable shipping</li>
+</ul>
+', '2025-08-03 22:42:27.585736', '2025-08-03 22:42:27.585736') RETURNING "id" /*application='RailsProject'*/[0m
+  ↳ app/models/page.rb:20:in `create_default_page'
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  ↳ app/models/page.rb:20:in `create_default_page'
+  [1m[36mPage Load (0.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."slug" = 'contact' LIMIT 1 /*application='RailsProject'*/[0m
+  ↳ app/models/page.rb:8:in `find_by_slug'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  ↳ app/models/page.rb:20:in `create_default_page'
+  [1m[36mPage Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pages" WHERE "pages"."slug" = 'contact' LIMIT 1 /*application='RailsProject'*/[0m
+  ↳ app/models/page.rb:20:in `create_default_page'
+  [1m[36mPage Create (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("slug", "title", "content", "created_at", "updated_at") VALUES ('contact', 'Contact Us', '<h3>Get in Touch</h3>
+<p>We''d love to hear from you! Whether you have questions about our products, need sizing advice, or want to share feedback, our team is here to help.</p>
+
+<h3>Contact Information</h3>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Customer Service</h4>
+    <p><strong>Email:</strong> support@swimi.com</p>
+    <p><strong>Phone:</strong> 1-800-SWIMI-US</p>
+    <p><strong>Hours:</strong> Monday - Friday, 9 AM - 6 PM EST</p>
+  </div>
+  <div class="col-md-6">
+    <h4>Store Location</h4>
+    <p>123 Beach Avenue<br>
+    Seaside City, SC 12345<br>
+    United States</p>
+  </div>
+</div>
+
+<h3>Online Support</h3>
+<p>For immediate assistance, you can also reach us through our live chat feature or by filling out our contact form below.</p>
+', '2025-08-03 22:42:27.604076', '2025-08-03 22:42:27.604076') RETURNING "id" /*application='RailsProject'*/[0m
+  ↳ app/models/page.rb:20:in `create_default_page'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  ↳ app/models/page.rb:20:in `create_default_page'
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /*application='RailsProject'*/[0m
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*application='RailsProject'*/[0m
+  [1m[36mUser Count (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*application='RailsProject'*/[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@swimi.com' LIMIT 1 /*application='RailsProject'*/[0m
+  ↳ lib/tasks/admin.rake:6:in `block (2 levels) in <main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  ↳ lib/tasks/admin.rake:6:in `block (2 levels) in <main>'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'admin@swimi.com' LIMIT 1 /*application='RailsProject'*/[0m
+  ↳ lib/tasks/admin.rake:6:in `block (2 levels) in <main>'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Admin' LIMIT 1 /*application='RailsProject'*/[0m
+  ↳ lib/tasks/admin.rake:6:in `block (2 levels) in <main>'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'admin@swimi.com' LIMIT 1 /*application='RailsProject'*/[0m
+  ↳ lib/tasks/admin.rake:6:in `block (2 levels) in <main>'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "admin", "street_address", "city", "postal_code", "province_id") VALUES ('Admin', 'admin@swimi.com', '$2a$12$7MQcDRlMu2UkpbElev0X/./aIaOKzG.quM3V62Czl6t8YzCJu6Mj.', NULL, NULL, NULL, '2025-08-03 22:51:13.414932', '2025-08-03 22:51:13.414932', 1, NULL, NULL, NULL, NULL) RETURNING "id" /*application='RailsProject'*/[0m
+  ↳ lib/tasks/admin.rake:6:in `block (2 levels) in <main>'
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  ↳ lib/tasks/admin.rake:6:in `block (2 levels) in <main>'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@swimi.com' LIMIT 1 /*application='RailsProject'*/[0m
+  ↳ lib/tasks/admin.rake:6:in `block (2 levels) in <main>'

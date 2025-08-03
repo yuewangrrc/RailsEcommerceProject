@@ -33,4 +33,9 @@ class User < ApplicationRecord
     return nil unless has_address?
     "#{street_address}, #{city}, #{province.name} #{postal_code}"
   end
+
+  # Admin functionality
+  def admin?
+    admin == true
+  end
 end

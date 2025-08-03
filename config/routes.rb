@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   root "home#index"
   
   # Home routes
-  get "about", to: "home#about"
+  get "about", to: "pages#show", slug: "about"
+  get "contact", to: "pages#show", slug: "contact"
   
   # Cart routes
   get "cart", to: "cart#show"
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   # Admin routes
   namespace :admin do
     root "dashboard#index"
+    resources :pages, only: [:index, :edit, :update], param: :slug
     resources :products do
       collection do
         patch :bulk_update
