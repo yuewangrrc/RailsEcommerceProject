@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   # Associations
   belongs_to :category
   has_many :order_items, dependent: :destroy
+  has_many_attached :images
 
   # Validations
   validates :name, presence: true, length: { minimum: 2 }
@@ -38,5 +39,18 @@ class Product < ApplicationRecord
     return 'danger' if stock == 0
     return 'warning' if low_stock?
     'success'
+  end
+
+  # Image methods
+  def primary_image
+    images.attached? ? images.first : nil
+  end
+
+  def image_url_or_placeholder
+    if primary_image.present?
+      Rails.application.routes.url_helpers.rails_blob_url(primary_image, only_path: true)
+    else
+      image_url.presence || 'https://via.placeholder.com/300x300?text=No+Image'
+    end
   end
 end

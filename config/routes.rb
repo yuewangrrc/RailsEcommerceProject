@@ -29,6 +29,9 @@ Rails.application.routes.draw do
       collection do
         patch :bulk_update
       end
+      member do
+        delete 'images/:image_id', to: 'products#remove_image', as: 'image'
+      end
     end
     resources :categories
   end

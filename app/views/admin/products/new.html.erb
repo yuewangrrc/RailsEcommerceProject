@@ -7,7 +7,7 @@
 
 <div class="card">
   <div class="card-body">
-    <%= form_with model: [:admin, @product], local: true, class: "row g-3" do |f| %>
+    <%= form_with model: [:admin, @product], local: true, multipart: true, class: "row g-3" do |f| %>
       <% if @product.errors.any? %>
         <div class="col-12">
           <div class="alert alert-danger">
@@ -51,9 +51,18 @@
       </div>
 
       <div class="col-12">
-        <%= f.label :image_url, "Image URL", class: "form-label" %>
-        <%= f.url_field :image_url, class: "form-control" %>
-        <div class="form-text">Enter a URL for the product image</div>
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.label :image_url, "Image URL (Optional)", class: "form-label" %>
+            <%= f.url_field :image_url, class: "form-control" %>
+            <div class="form-text">Enter a URL for the product image (fallback option)</div>
+          </div>
+          <div class="col-md-6">
+            <%= f.label :images, "Upload Images", class: "form-label" %>
+            <%= f.file_field :images, multiple: true, accept: "image/*", class: "form-control" %>
+            <div class="form-text">Select one or more product images (JPG, PNG, GIF)</div>
+          </div>
+        </div>
       </div>
 
       <div class="col-12">

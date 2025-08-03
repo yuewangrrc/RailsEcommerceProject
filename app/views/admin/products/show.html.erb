@@ -12,16 +12,67 @@
 
 <div class="row">
   <div class="col-md-6">
-    <!-- Product Image -->
+    <!-- Product Images -->
     <div class="card mb-4">
       <div class="card-header">
         <h5 class="mb-0">
-          <i class="fas fa-image me-2"></i>Product Image
+          <i class="fas fa-images me-2"></i>Product Images
         </h5>
       </div>
-      <div class="card-body text-center">
-        <img src="<%= @product.image_url %>" alt="<%= @product.name %>" 
-             class="img-fluid rounded" style="max-height: 400px;">
+      <div class="card-body">
+        <% if @product.images.attached? %>
+          <!-- Primary Image -->
+          <div class="text-center mb-3">
+            <%= image_tag @product.primary_image, alt: @product.name,
+                class: "img-fluid rounded shadow", style: "max-height: 300px;" %>
+          </div>
+          
+          <!-- Additional Images -->
+          <% if @product.images.count > 1 %>
+            <div class="row">
+              <% @product.images.drop(1).each do |image| %>
+                <div class="col-4 mb-2">
+                  <%= image_tag image, alt: @product.name,
+                      class: "img-fluid rounded", style: "height: 80px; object-fit: cover; width: 100%;" %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% elsif @product.image_url.present? %>
+          <!-- Fallback to URL Image -->
+          <div class="text-center">
+            <img src="<%= @product.image_url %>" alt="<%= @product.name %>" 
+                 class="img-fluid rounded shadow" style="max-height: 300px;">
+            <small class="d-block text-muted mt-2">External Image</small>
+          </div>
+        <% else %>
+          <!-- No Image Placeholder -->
+          <div class="text-center">
+            <div class="bg-light rounded d-flex align-items-center justify-content-center" 
+                 style="height: 300px;">
+              <div class="text-muted">
+                <i class="fas fa-image fa-3x mb-2"></i>
+                <div>No Image Available</div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        
+        <!-- Upload Status -->
+        <div class="mt-3 text-center">
+          <% if @product.images.attached? %>
+            <span class="badge bg-success">
+              <i class="fas fa-check me-1"></i>
+              <%= pluralize(@product.images.count, 'image') %> uploaded
+            </span>
+          <% end %>
+          <% if @product.image_url.present? %>
+            <span class="badge bg-info">
+              <i class="fas fa-link me-1"></i>
+              URL image set
+            </span>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

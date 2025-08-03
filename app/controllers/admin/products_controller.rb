@@ -1,5 +1,5 @@
 class Admin::ProductsController < Admin::BaseController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :remove_image]
 
   def index
     @products = Product.includes(:category)
@@ -96,6 +96,14 @@ class Admin::ProductsController < Admin::BaseController
     end
   end
 
+  def remove_image
+    image = @product.images.find(params[:image_id])
+    image.purge
+    redirect_to edit_admin_product_path(@product), notice: 'Image removed successfully.'
+  rescue ActiveRecord::RecordNotFound
+    redirect_to edit_admin_product_path(@product), alert: 'Image not found.'
+  end
+
   private
 
   def set_product
@@ -103,6 +111,6 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :size, :stock, :image_url, :category_id, :active)
+    params.require(:product).permit(:name, :description, :price, :size, :stock, :image_url, :category_id, :active, images: [])
   end
 end

@@ -70,7 +70,7 @@
             <% @products.each do |product| %>
               <tr>
                 <td>
-                  <img src="<%= product.image_url %>" alt="<%= product.name %>" 
+                  <img src="<%= product.image_url_or_placeholder %>" alt="<%= product.name %>" 
                        style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
                 </td>
                 <td>

@@ -11651,3 +11651,737 @@ FOREIGN KEY ("province_id")
   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250803214655') RETURNING "version" /*application='RailsProject'*/[0m
   [1m[36mTRANSACTION (10.8ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Migrating to CreateActiveStorageTables (20250803215234)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL) /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key") /*application='RailsProject'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+) /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id") /*application='RailsProject'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id") /*application='RailsProject'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+) /*application='RailsProject'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest") /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250803215234') RETURNING "version" /*application='RailsProject'*/[0m
+  [1m[36mTRANSACTION (11.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Started GET "/products?search=&category=Women%27s+Swimwear&commit=Search" for 127.0.0.1 at 2025-08-03 17:03:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject'*/[0m
+Processing by ProductsController#index as HTML
+  Parameters: {"search"=>"", "category"=>"Women's Swimwear", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "categories" ON "categories"."id" = "products"."category_id" WHERE "categories"."name" = 'Women''s Swimwear' /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:70
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" INNER JOIN "categories" ON "categories"."id" = "products"."category_id" WHERE "categories"."name" = 'Women''s Swimwear' LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "products"."id" AS t0_r0, "products"."name" AS t0_r1, "products"."price" AS t0_r2, "products"."description" AS t0_r3, "products"."size" AS t0_r4, "products"."stock" AS t0_r5, "products"."image_url" AS t0_r6, "products"."category_id" AS t0_r7, "products"."created_at" AS t0_r8, "products"."updated_at" AS t0_r9, "products"."active" AS t0_r10, "categories"."id" AS t1_r0, "categories"."name" AS t1_r1, "categories"."created_at" AS t1_r2, "categories"."updated_at" AS t1_r3, "categories"."description" AS t1_r4 FROM "products" INNER JOIN "categories" ON "categories"."id" = "products"."category_id" WHERE "categories"."name" = 'Women''s Swimwear' LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/shared/_product_card.html.erb:20
+  Rendered shared/_product_card.html.erb (Duration: 37.9ms | GC: 19.1ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 75.4ms | GC: 19.1ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 93.8ms | GC: 19.1ms)
+Completed 200 OK in 449ms (Views: 96.2ms | ActiveRecord: 3.1ms (5 queries, 0 cached) | GC: 69.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-08-03 17:03:11 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:77
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/shared/_product_card.html.erb:20
+  Rendered shared/_product_card.html.erb (Duration: 3.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 33.6ms | GC: 0.0ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | GC: 0.0ms)
+Completed 200 OK in 46ms (Views: 35.6ms | ActiveRecord: 1.1ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-08-03 17:03:12 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:19
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 6 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 6.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='home'*/[0m
+  ↳ app/views/layouts/application.html.erb:58
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 11.5ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-08-03 17:03:14 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:77
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:83
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 12 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:84
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/shared/_product_card.html.erb:20
+  Rendered shared/_product_card.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_product_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 38.8ms | GC: 19.4ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | GC: 19.9ms)
+Completed 200 OK in 51ms (Views: 41.4ms | ActiveRecord: 0.8ms (6 queries, 0 cached) | GC: 19.9ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2025-08-03 17:03:16 -0500
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='orders'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."user_id" = 22 /*action='index',application='RailsProject',controller='orders'*/[0m
+  ↳ app/views/orders/index.html.erb:9
+  [1m[36mOrder Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" WHERE "orders"."user_id" = 22 LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='orders'*/[0m
+  ↳ app/views/orders/index.html.erb:14
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = 22 ORDER BY "orders"."created_at" DESC LIMIT 10 OFFSET 0 /*action='index',application='RailsProject',controller='orders'*/[0m
+  ↳ app/views/orders/index.html.erb:15
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = 6 /*action='index',application='RailsProject',controller='orders'*/[0m
+  ↳ app/views/orders/index.html.erb:15
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 67 /*action='index',application='RailsProject',controller='orders'*/[0m
+  ↳ app/views/orders/index.html.erb:15
+  [1m[36mProvince Load (0.2ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."id" = 4 LIMIT 1 /*action='index',application='RailsProject',controller='orders'*/[0m
+  ↳ app/views/orders/index.html.erb:64
+  Rendered orders/index.html.erb within layouts/application (Duration: 30.4ms | GC: 0.8ms)
+  Rendered shared/_flash_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_breadcrumbs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | GC: 0.8ms)
+Completed 200 OK in 58ms (Views: 31.8ms | ActiveRecord: 2.1ms (7 queries, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2025-08-03 17:03:17 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:3:in `index'
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:4:in `index'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:5:in `index'
+  [1m[36mOrder Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `index'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:110
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:111
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mOrder Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:135
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:136
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 16.4ms | GC: 0.0ms)
+  Rendered layout layouts/admin.html.erb (Duration: 19.5ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 19.7ms | ActiveRecord: 1.7ms (14 queries, 3 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2025-08-03 17:03:20 -0500
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/index.html.erb within layouts/admin
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:6
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:25
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:69
+  [1m[36mProduct Load (17.8ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 20 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:70
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (7, 8) /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:70
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 133 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 132 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 131 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 130 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 129 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 128 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 127 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 126 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 125 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 124 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 123 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 122 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 121 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 120 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 119 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 118 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 117 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 116 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 115 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  Rendered admin/products/index.html.erb within layouts/admin (Duration: 92.3ms | GC: 20.0ms)
+  Rendered layout layouts/admin.html.erb (Duration: 94.0ms | GC: 20.0ms)
+Completed 200 OK in 109ms (Views: 72.9ms | ActiveRecord: 21.9ms (26 queries, 0 cached) | GC: 20.0ms)
+
+
+Started GET "/admin/products/134" for 127.0.0.1 at 2025-08-03 17:03:22 -0500
+Processing by Admin::ProductsController#show as HTML
+  Parameters: {"id"=>"134"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 134 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:110:in `set_product'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/show.html.erb within layouts/admin
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:23
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/views/admin/products/show.html.erb:63
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:97
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."category_id" = 7 AND "products"."id" != 134 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:202
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 7 AND "products"."id" != 134 LIMIT 6 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:211
+  Rendered admin/products/show.html.erb within layouts/admin (Duration: 48.2ms | GC: 35.6ms)
+  Rendered layout layouts/admin.html.erb (Duration: 50.7ms | GC: 37.1ms)
+Completed 200 OK in 65ms (Views: 50.7ms | ActiveRecord: 0.9ms (7 queries, 1 cached) | GC: 37.5ms)
+
+
+Started GET "/admin/products/134/edit" for 127.0.0.1 at 2025-08-03 17:03:22 -0500
+Processing by Admin::ProductsController#edit as HTML
+  Parameters: {"id"=>"134"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 134 LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:110:in `set_product'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/edit.html.erb within layouts/admin
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/edit.html.erb:34
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/edit.html.erb:57
+  Rendered admin/products/edit.html.erb within layouts/admin (Duration: 29.8ms | GC: 12.5ms)
+  Rendered layout layouts/admin.html.erb (Duration: 31.4ms | GC: 12.5ms)
+Completed 200 OK in 73ms (Views: 31.7ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 23.6ms)
+
+
+Started GET "/admin/products/134" for 127.0.0.1 at 2025-08-03 17:03:32 -0500
+Processing by Admin::ProductsController#show as HTML
+  Parameters: {"id"=>"134"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 134 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:110:in `set_product'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/show.html.erb within layouts/admin
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:23
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/views/admin/products/show.html.erb:63
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:97
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."category_id" = 7 AND "products"."id" != 134 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:202
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 7 AND "products"."id" != 134 LIMIT 6 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:211
+  Rendered admin/products/show.html.erb within layouts/admin (Duration: 10.6ms | GC: 0.5ms)
+  Rendered layout layouts/admin.html.erb (Duration: 12.0ms | GC: 0.5ms)
+Completed 200 OK in 26ms (Views: 11.9ms | ActiveRecord: 1.1ms (7 queries, 1 cached) | GC: 0.5ms)
+
+
+Started PATCH "/admin/products/134" for 127.0.0.1 at 2025-08-03 17:03:37 -0500
+Processing by Admin::ProductsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"sss", "category_id"=>"7", "price"=>"2.0", "size"=>"22", "stock"=>"2222", "image_url"=>"", "images"=>["", #<ActionDispatch::Http::UploadedFile:0x00007aca02249d38 @tempfile=#<Tempfile:/tmp/RackMultipart20250803-64597-x4azfe.JPEG>, @content_type="image/jpeg", @original_filename="123.JPEG", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"123.JPEG\"\r\nContent-Type: image/jpeg\r\n">], "description"=>"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription"}, "commit"=>"Update Product", "id"=>"134"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='update',application='RailsProject',controller='products'*/[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 134 LIMIT 1 /*action='update',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:110:in `set_product'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:61:in `update'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*action='update',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:61:in `update'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ('r5330bybwtwexcdu19zrndd7xfoi', '123.JPEG', 'image/jpeg', '{"identified":true}', 'local', 47195, 'SDE96DqZzG8/mar73ChPXQ==', '2025-08-03 22:03:37.097195') RETURNING "id" /*action='update',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:61:in `update'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ('images', 'Product', 134, 1, '2025-08-03 22:03:37.100809') RETURNING "id" /*action='update',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:61:in `update'
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-08-03 22:03:37.103140' WHERE "products"."id" = 134 /*action='update',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:61:in `update'
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:61:in `update'
+[36m  Disk Storage (1.2ms) [0m[32mUploaded file to key: r5330bybwtwexcdu19zrndd7xfoi (checksum: SDE96DqZzG8/mar73ChPXQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d0ef0d55-c13f-4f2a-a297-b495ba23e785) to Async(default) with arguments: #<GlobalID:0x00007aca021c1b40 @uri=#<URI::GID gid://rails-project/ActiveStorage::Blob/1>>
+[ActiveJob] ↳ app/controllers/admin/products_controller.rb:61:in `update'
+Redirected to http://127.0.0.1:3000/admin/products/134
+Completed 302 Found in 138ms (ActiveRecord: 11.2ms (6 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/admin/products/134" for 127.0.0.1 at 2025-08-03 17:03:37 -0500
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ef0d55-c13f-4f2a-a297-b495ba23e785]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*application='RailsProject'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ef0d55-c13f-4f2a-a297-b495ba23e785] Performing ActiveStorage::AnalyzeJob (Job ID: d0ef0d55-c13f-4f2a-a297-b495ba23e785) from Async(default) enqueued at 2025-08-03T22:03:37.163862587Z with arguments: #<GlobalID:0x00007aca039816e0 @uri=#<URI::GID gid://rails-project/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ef0d55-c13f-4f2a-a297-b495ba23e785] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ef0d55-c13f-4f2a-a297-b495ba23e785]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='RailsProject',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ef0d55-c13f-4f2a-a297-b495ba23e785]   [1m[36mActiveStorage::Blob Update (1.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = '{"identified":true,"analyzed":true}' WHERE "active_storage_blobs"."id" = 1 /*application='RailsProject',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ef0d55-c13f-4f2a-a297-b495ba23e785]   [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = 1 /*application='RailsProject',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ef0d55-c13f-4f2a-a297-b495ba23e785]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 134 /*application='RailsProject',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ef0d55-c13f-4f2a-a297-b495ba23e785]   [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-08-03 22:03:37.263496' WHERE "products"."id" = 134 /*application='RailsProject',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ef0d55-c13f-4f2a-a297-b495ba23e785]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='RailsProject',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ef0d55-c13f-4f2a-a297-b495ba23e785] Performed ActiveStorage::AnalyzeJob (Job ID: d0ef0d55-c13f-4f2a-a297-b495ba23e785) from Async(default) in 71.84ms
+Processing by Admin::ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"134"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 134 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:110:in `set_product'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/show.html.erb within layouts/admin
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:23
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:26
+  [1m[36mActiveStorage::Attachment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:31
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/views/admin/products/show.html.erb:63
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images'[0m
+  ↳ app/views/admin/products/show.html.erb:66
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:97
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."category_id" = 7 AND "products"."id" != 134 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:202
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 7 AND "products"."id" != 134 LIMIT 6 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:211
+  Rendered admin/products/show.html.erb within layouts/admin (Duration: 21.2ms | GC: 0.9ms)
+  Rendered layout layouts/admin.html.erb (Duration: 22.4ms | GC: 0.9ms)
+Completed 200 OK in 38ms (Views: 22.0ms | ActiveRecord: 1.4ms (12 queries, 3 cached) | GC: 1.8ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--fd6ce9e5546e058f748280d3c1aae09f37f71e18/123.JPEG" for 127.0.0.1 at 2025-08-03 17:03:37 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--fd6ce9e5546e058f748280d3c1aae09f37f71e18", "filename"=>"123"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='show',application='RailsProject',controller='redirect'*/[0m
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: r5330bybwtwexcdu19zrndd7xfoi (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJyNTMzMGJ5Ynd0d2V4Y2R1MTl6cm5kZDd4Zm9pIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTIzLkpQRUdcIjsgZmlsZW5hbWUqPVVURi04JycxMjMuSlBFRyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA4LTAzVDIyOjA4OjM3LjM5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a45585ed352bda691f695aeb343c6376d53c4fee/123.JPEG)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJyNTMzMGJ5Ynd0d2V4Y2R1MTl6cm5kZDd4Zm9pIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTIzLkpQRUdcIjsgZmlsZW5hbWUqPVVURi04JycxMjMuSlBFRyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA4LTAzVDIyOjA4OjM3LjM5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a45585ed352bda691f695aeb343c6376d53c4fee/123.JPEG
+Completed 302 Found in 16ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJyNTMzMGJ5Ynd0d2V4Y2R1MTl6cm5kZDd4Zm9pIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTIzLkpQRUdcIjsgZmlsZW5hbWUqPVVURi04JycxMjMuSlBFRyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA4LTAzVDIyOjA4OjM3LjM5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a45585ed352bda691f695aeb343c6376d53c4fee/123.JPEG" for 127.0.0.1 at 2025-08-03 17:03:37 -0500
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"123"}
+Completed 200 OK in 13ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2025-08-03 17:03:40 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:3:in `index'
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:4:in `index'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:5:in `index'
+  [1m[36mOrder Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `index'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:110
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:111
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mOrder Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:135
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:136
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 16.0ms | GC: 0.5ms)
+  Rendered layout layouts/admin.html.erb (Duration: 17.8ms | GC: 0.5ms)
+Completed 200 OK in 42ms (Views: 17.2ms | ActiveRecord: 1.8ms (14 queries, 3 cached) | GC: 7.6ms)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2025-08-03 17:03:41 -0500
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/index.html.erb within layouts/admin
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:25
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:69
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 20 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:70
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (7, 8) /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:70
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:51:in `image_url_or_placeholder'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 133 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 132 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 131 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 130 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 129 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 128 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 127 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 126 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 125 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 124 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 123 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 122 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 121 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 120 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 119 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 118 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 117 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 116 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 115 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  Rendered admin/products/index.html.erb within layouts/admin (Duration: 59.7ms | GC: 3.8ms)
+  Rendered layout layouts/admin.html.erb (Duration: 60.9ms | GC: 3.8ms)
+Completed 200 OK in 71ms (Views: 58.3ms | ActiveRecord: 3.3ms (30 queries, 2 cached) | GC: 3.8ms)
+
+
+Started GET "/admin/products/134/edit" for 127.0.0.1 at 2025-08-03 17:03:43 -0500
+Processing by Admin::ProductsController#edit as HTML
+  Parameters: {"id"=>"134"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 134 LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:110:in `set_product'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/edit.html.erb within layouts/admin
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/edit.html.erb:34
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/edit.html.erb:57
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/edit.html.erb:61
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/edit.html.erb:64
+  Rendered admin/products/edit.html.erb within layouts/admin (Duration: 19.2ms | GC: 6.4ms)
+  Rendered layout layouts/admin.html.erb (Duration: 19.5ms | GC: 6.4ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.0ms (6 queries, 0 cached) | GC: 6.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `admin_product_image_path' for an instance of #<Class:0x00007aca20362440>)
+Caused by: NoMethodError (undefined method `admin_product_image_path' for an instance of #<Class:0x00007aca20362440>)
+
+Information for: ActionView::Template::Error (undefined method `admin_product_image_path' for an instance of #<Class:0x00007aca20362440>):
+    65:                   <div class="card-body p-2">
+    66:                     <div class="d-flex justify-content-between align-items-center">
+    67:                       <small class="text-muted">Image <%= index + 1 %></small>
+    68:                       <%= link_to "Remove", admin_product_image_path(@product, image), 
+    69:                           method: :delete,
+    70:                           data: { 
+    71:                             turbo_method: :delete,
+  
+app/views/admin/products/edit.html.erb:68
+app/views/admin/products/edit.html.erb:61
+app/views/admin/products/edit.html.erb:13
+
+Information for cause: NoMethodError (undefined method `admin_product_image_path' for an instance of #<Class:0x00007aca20362440>):
+  
+app/views/admin/products/edit.html.erb:68
+app/views/admin/products/edit.html.erb:61
+app/views/admin/products/edit.html.erb:13
+Started GET "/admin/products/134" for 127.0.0.1 at 2025-08-03 17:03:44 -0500
+Processing by Admin::ProductsController#show as HTML
+  Parameters: {"id"=>"134"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 134 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:110:in `set_product'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/show.html.erb within layouts/admin
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:23
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:26
+  [1m[36mActiveStorage::Attachment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:31
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/views/admin/products/show.html.erb:63
+  [1m[36mCACHE ActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images'[0m
+  ↳ app/views/admin/products/show.html.erb:66
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:97
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."category_id" = 7 AND "products"."id" != 134 LIMIT 1 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:202
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = 7 AND "products"."id" != 134 LIMIT 6 /*action='show',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/show.html.erb:211
+  Rendered admin/products/show.html.erb within layouts/admin (Duration: 14.6ms | GC: 0.0ms)
+  Rendered layout layouts/admin.html.erb (Duration: 15.8ms | GC: 0.0ms)
+Completed 200 OK in 239ms (Views: 15.5ms | ActiveRecord: 1.2ms (12 queries, 3 cached) | GC: 50.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2025-08-03 17:03:45 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:3:in `index'
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:4:in `index'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:5:in `index'
+  [1m[36mOrder Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `index'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:110
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:111
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mOrder Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:135
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:136
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 17.6ms | GC: 2.4ms)
+  Rendered layout layouts/admin.html.erb (Duration: 18.7ms | GC: 2.4ms)
+Completed 200 OK in 35ms (Views: 18.1ms | ActiveRecord: 1.7ms (14 queries, 3 cached) | GC: 2.4ms)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2025-08-03 17:03:46 -0500
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/index.html.erb within layouts/admin
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:6
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:25
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:69
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 20 OFFSET 0 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:70
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (7, 8) /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/index.html.erb:70
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mCACHE ActiveStorage::Attachment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' ORDER BY "active_storage_attachments"."id" ASC LIMIT 1[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:51:in `image_url_or_placeholder'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 133 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 132 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 131 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 130 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 129 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 128 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 127 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 126 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 125 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 124 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 123 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 122 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 121 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 120 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 119 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 118 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 117 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 116 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 115 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  ↳ app/models/product.rb:46:in `primary_image'
+  Rendered admin/products/index.html.erb within layouts/admin (Duration: 62.1ms | GC: 2.9ms)
+  Rendered layout layouts/admin.html.erb (Duration: 63.8ms | GC: 2.9ms)
+Completed 200 OK in 76ms (Views: 58.8ms | ActiveRecord: 5.8ms (30 queries, 2 cached) | GC: 2.9ms)
+
+
+Started GET "/admin/products/134/edit" for 127.0.0.1 at 2025-08-03 17:03:47 -0500
+Processing by Admin::ProductsController#edit as HTML
+  Parameters: {"id"=>"134"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 134 LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/controllers/admin/products_controller.rb:110:in `set_product'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/edit.html.erb within layouts/admin
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/edit.html.erb:34
+  [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/edit.html.erb:57
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 134 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'images' /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/edit.html.erb:61
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='edit',application='RailsProject',controller='products'*/[0m
+  ↳ app/views/admin/products/edit.html.erb:64
+  Rendered admin/products/edit.html.erb within layouts/admin (Duration: 9.5ms | GC: 0.6ms)
+  Rendered layout layouts/admin.html.erb (Duration: 9.9ms | GC: 0.6ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.8ms (6 queries, 0 cached) | GC: 3.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `admin_product_image_path' for an instance of #<Class:0x00007aca20362440>)
+Caused by: NoMethodError (undefined method `admin_product_image_path' for an instance of #<Class:0x00007aca20362440>)
+
+Information for: ActionView::Template::Error (undefined method `admin_product_image_path' for an instance of #<Class:0x00007aca20362440>):
+    65:                   <div class="card-body p-2">
+    66:                     <div class="d-flex justify-content-between align-items-center">
+    67:                       <small class="text-muted">Image <%= index + 1 %></small>
+    68:                       <%= link_to "Remove", admin_product_image_path(@product, image), 
+    69:                           method: :delete,
+    70:                           data: { 
+    71:                             turbo_method: :delete,
+  
+app/views/admin/products/edit.html.erb:68
+app/views/admin/products/edit.html.erb:61
+app/views/admin/products/edit.html.erb:13
+
+Information for cause: NoMethodError (undefined method `admin_product_image_path' for an instance of #<Class:0x00007aca20362440>):
+  
+app/views/admin/products/edit.html.erb:68
+app/views/admin/products/edit.html.erb:61
+app/views/admin/products/edit.html.erb:13

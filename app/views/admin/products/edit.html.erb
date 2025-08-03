@@ -10,7 +10,7 @@
 
 <div class="card">
   <div class="card-body">
-    <%= form_with model: [:admin, @product], local: true, class: "row g-3" do |f| %>
+    <%= form_with model: [:admin, @product], local: true, multipart: true, class: "row g-3" do |f| %>
       <% if @product.errors.any? %>
         <div class="col-12">
           <div class="alert alert-danger">
@@ -53,10 +53,48 @@
         <%= f.number_field :stock, class: "form-control" %>
       </div>
 
+      <!-- Current Images -->
+      <% if @product.images.attached? %>
+        <div class="col-12">
+          <label class="form-label">Current Images</label>
+          <div class="row">
+            <% @product.images.each_with_index do |image, index| %>
+              <div class="col-md-3 mb-3">
+                <div class="card">
+                  <%= image_tag image, class: "card-img-top", style: "height: 150px; object-fit: cover;" %>
+                  <div class="card-body p-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">Image <%= index + 1 %></small>
+                      <%= link_to "Remove", admin_product_image_path(@product, image), 
+                          method: :delete,
+                          data: { 
+                            turbo_method: :delete,
+                            turbo_confirm: "Are you sure you want to remove this image?" 
+                          },
+                          class: "btn btn-sm btn-outline-danger" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <!-- Image Upload -->
       <div class="col-12">
-        <%= f.label :image_url, "Image URL", class: "form-label" %>
-        <%= f.url_field :image_url, class: "form-control" %>
-        <div class="form-text">Enter a URL for the product image</div>
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.label :image_url, "Image URL (Optional)", class: "form-label" %>
+            <%= f.url_field :image_url, class: "form-control" %>
+            <div class="form-text">Enter a URL for the product image (fallback option)</div>
+          </div>
+          <div class="col-md-6">
+            <%= f.label :images, "Upload New Images", class: "form-label" %>
+            <%= f.file_field :images, multiple: true, accept: "image/*", class: "form-control" %>
+            <div class="form-text">Select one or more additional product images (JPG, PNG, GIF)</div>
+          </div>
+        </div>
       </div>
 
       <div class="col-12">
