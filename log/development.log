@@ -10763,3 +10763,821 @@ Processing by Admin::ProductsController#index as HTML
 Completed 200 OK in 55ms (Views: 27.1ms | ActiveRecord: 2.7ms (4 queries, 0 cached) | GC: 1.6ms)
 
 
+Started GET "/admin" for 127.0.0.1 at 2025-08-03 16:05:15 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:3:in `index'
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:4:in `index'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:5:in `index'
+  [1m[36mOrder Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `index'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:110
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:111
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mOrder Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:135
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:136
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 28.2ms | GC: 1.2ms)
+  Rendered layout layouts/admin.html.erb (Duration: 32.8ms | GC: 1.2ms)
+Completed 200 OK in 91ms (Views: 33.0ms | ActiveRecord: 5.1ms (14 queries, 3 cached) | GC: 16.9ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2025-08-03 16:05:15 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  [1m[36mProduct Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:3:in `index'
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:4:in `index'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:5:in `index'
+  [1m[36mOrder Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/controllers/admin/dashboard_controller.rb:6:in `index'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/dashboard/index.html.erb within layouts/admin
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:110
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:111
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 LIMIT 1[0m
+  ↳ app/views/admin/dashboard/index.html.erb:115
+  [1m[36mOrder Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "orders" LIMIT 1 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:135
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT 5 /*action='index',application='RailsProject',controller='dashboard'*/[0m
+  ↳ app/views/admin/dashboard/index.html.erb:136
+  Rendered admin/dashboard/index.html.erb within layouts/admin (Duration: 14.4ms | GC: 1.4ms)
+  Rendered layout layouts/admin.html.erb (Duration: 15.7ms | GC: 1.4ms)
+Completed 200 OK in 31ms (Views: 15.3ms | ActiveRecord: 1.4ms (14 queries, 3 cached) | GC: 1.4ms)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2025-08-03 16:05:16 -0500
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 22 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject',controller='products'*/[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/products/index.html.erb within layouts/admin
+  Rendered admin/products/index.html.erb within layouts/admin (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/admin.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% content_for :title, "Manage Products" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>
+    <i class="fas fa-boxes me-2"></i>Manage Products 
+    <span class="badge bg-secondary"><%= @products.total_count %></span>
+  </h1>
+  <%= link_to "Add New Product", new_admin_product_path, class: "btn btn-primary" %>
+</div>
+
+<!-- Advanced Filtering Form -->
+<div class="card mb-4">
+  <div class="card-header">
+    <h5 class="mb-0">
+      <i class="fas fa-filter me-2"></i>Product Filters
+    </h5>
+  </div>
+  <div class="card-body">
+    <%= form_with url: admin_products_path, method: :get, local: true, class: "row g-3" do |f| %>
+      <div class="col-md-4">
+        <%= f.text_field :search, value: params[:search], placeholder: "Search products...", 
+            class: "form-control", id: "product-search" %>
+      </div>
+      <div class="col-md-3">
+        <%= f.collection_select :category_id, @categories, :id, :name, 
+            { prompt: "All Categories", selected: params[:category_id] }, 
+            { class: "form-select" } %>
+      </div>
+      <div class="col-md-2">
+        <%= f.select :stock_filter, 
+            options_for_select([
+              ['All Stock Levels', ''],
+              ['In Stock', 'in_stock'],
+              ['Out of Stock', 'out_of_stock'],
+              ['Low Stock (≤5)', 'low_stock']
+            ], params[:stock_filter]), 
+            {}, { class: "form-select" } %>
+      </div>
+      <div class="col-md-3">
+        <div class="d-flex gap-2">
+          <%= f.submit "Filter", class: "btn btn-outline-primary" %>
+          <%= link_to "Reset", admin_products_path, class: "btn btn-outline-secondary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- Bulk Actions Form -->
+<%= form_with url: bulk_update_admin_products_path, method: :patch, local: true do |f| %>
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">Products List</h5>
+      <div class="d-flex gap-2 align-items-center">
+        <%= f.select :bulk_action, 
+            options_for_select([
+              ['Select Action...', ''],
+              ['Delete Selected', 'delete'],
+              ['Mark Out of Stock', 'mark_out_of_stock'],
+              ['Activate Selected', 'activate'],
+              ['Deactivate Selected', 'deactivate']
+            ]), 
+            {}, { class: "form-select form-select-sm", style: "width: 180px;" } %>
+        <%= f.submit "Apply", class: "btn btn-sm btn-warning", id: "bulk-action-btn", 
+            data: { confirm: "Are you sure you want to apply this action to selected products?" } %>
+      </div>
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-striped mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th style="width: 40px;">
+                <input type="checkbox" id="select-all" class="form-check-input">
+              </th>
+              <th style="width: 80px;">Image</th>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Status</th>
+              <th style="width: 120px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @products.any? %>
+              <% @products.each do |product| %>
+                <tr>
+                  <td>
+                    <%= check_box_tag "product_ids[]", product.id, false, 
+                        class: "form-check-input product-checkbox" %>
+                  </td>
+                  <td>
+                    <img src="<%= product.image_url %>" alt="<%= product.name %>" 
+                         style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
+                  </td>
+                  <td>
+                    <div>
+                      <strong><%= link_to product.name, admin_product_path(product), 
+                          class: "text-decoration-none" %></strong>
+                      <br>
+                      <small class="text-muted">Size: <%= product.size %></small>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge bg-info"><%= product.category.name %></span>
+                  </td>
+                  <td>
+                    <strong>$<%= product.price %></strong>
+                  </td>
+                  <td>
+                    <span class="badge bg-<%= product.stock_status_class %>">
+                      <%= product.stock_status %> (<%= product.stock %>)
+                    </span>
+                  </td>
+                  <td>
+                    <% if product.active? %>
+                      <span class="badge bg-success">Active</span>
+                    <% else %>
+                      <span class="badge bg-secondary">Inactive</span>
+                    <% end %>
+                  </td>
+                  <td>
+                    <div class="btn-group btn-group-sm">
+                      <%= link_to admin_product_path(product), class: "btn btn-outline-primary btn-sm" do %>
+                        <i class="fas fa-eye"></i>
+                      <% end %>
+                      <%= link_to edit_admin_product_path(product), class: "btn btn-outline-warning btn-sm" do %>
+                        <i class="fas fa-edit"></i>
+                      <% end %>
+                      <%= link_to admin_product_path(product), method: :delete,
+                          class: "btn btn-outline-danger btn-sm",
+                          data: { 
+                            turbo_method: :delete,
+                            turbo_confirm: "Are you sure you want to delete #{product.name}?" 
+                          } do %>
+                        <i class="fas fa-trash"></i>
+                      <% end %>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% else %>
+              <tr>
+                <td colspan="8" class="text-center py-5">
+                  <div class="text-muted">
+                    <i class="fas fa-box-open fa-3x mb-3"></i>
+                    <h5>No products found</h5>
+                    <p>Try adjusting your search criteria or <%= link_to "add a new product", new_admin_product_path %>.</p>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<!-- Pagination -->
+<% if @products.respond_to?(:total_pages) && @products.total_pages > 1 %>
+  <div class="d-flex justify-content-center mt-4">
+    <%= paginate @products, theme: 'bootstrap-5' %>
+  </div>
+<% end %>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all checkbox functionality
+  const selectAllCheckbox = document.getElementById('select-all');
+  const productCheckboxes = document.querySelectorAll('.product-checkbox');
+  const bulkActionBtn = document.getElementById('bulk-action-btn');
+
+  selectAllCheckbox.addEventListener('change', function() {
+    productCheckboxes.forEach(checkbox => {
+      checkbox.checked = this.checked;
+    });
+    toggleBulkActionButton();
+  });
+
+  productCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      const checkedBoxes = document.querySelectorAll('.product-checkbox:checked');
+      selectAllCheckbox.checked = checkedBoxes.length === productCheckboxes.length;
+      selectAllCheckbox.indeterminate = checkedBoxes.length > 0 && checkedBoxes.length < productCheckboxes.length;
+      toggleBulkActionButton();
+    });
+  });
+
+  function toggleBulkActionButton() {
+    const checkedBoxes = document.querySelectorAll('.product-checkbox:checked');
+    bulkActionBtn.disabled = checkedBoxes.length === 0;
+  }
+
+  // Initially disable bulk action button
+  toggleBulkActionButton();
+});
+</script>
+            <tr>
+              <td>
+                <img src="<%= product.image_url %>" alt="<%= product.name %>" style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
+              </td>
+              <td>
+                <strong><%= product.name %></strong><br>
+                <small class="text-muted"><%= truncate(product.description, length: 50) %></small>
+              </td>
+              <td><%= product.category.name %></td>
+              <td><span class="badge bg-secondary"><%= product.size %></span></td>
+              <td>$<%= product.price %></td>
+              <td>
+                <% if product.stock > 5 %>
+                  <span class="badge bg-success"><%= product.stock %></span>
+                <% elsif product.stock > 0 %>
+                  <span class="badge bg-warning"><%= product.stock %></span>
+                <% else %>
+                  <span class="badge bg-danger">Out of Stock</span>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to "View", admin_product_path(product), class: "btn btn-sm btn-outline-info" %>
+                <%= link_to "Edit", edit_admin_product_path(product), class: "btn btn-sm btn-outline-primary" %>
+                <%= link_to "Delete", admin_product_path(product), 
+                    data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this product?" },
+                    class: "btn btn-sm btn-outline-danger" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
+    <% if @products.respond_to?(:current_page) %>
+      <div class="d-flex justify-content-center mt-4">
+        <%= paginate @products %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/ywang/RailsEcommerceProject/app/views/admin/products/index.html.erb:242: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% content_for :title, "Manage Products" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>
+    <i class="fas fa-boxes me-2"></i>Manage Products 
+    <span class="badge bg-secondary"><%= @products.total_count %></span>
+  </h1>
+  <%= link_to "Add New Product", new_admin_product_path, class: "btn btn-primary" %>
+</div>
+
+<!-- Advanced Filtering Form -->
+<div class="card mb-4">
+  <div class="card-header">
+    <h5 class="mb-0">
+      <i class="fas fa-filter me-2"></i>Product Filters
+    </h5>
+  </div>
+  <div class="card-body">
+    <%= form_with url: admin_products_path, method: :get, local: true, class: "row g-3" do |f| %>
+      <div class="col-md-4">
+        <%= f.text_field :search, value: params[:search], placeholder: "Search products...", 
+            class: "form-control", id: "product-search" %>
+      </div>
+      <div class="col-md-3">
+        <%= f.collection_select :category_id, @categories, :id, :name, 
+            { prompt: "All Categories", selected: params[:category_id] }, 
+            { class: "form-select" } %>
+      </div>
+      <div class="col-md-2">
+        <%= f.select :stock_filter, 
+            options_for_select([
+              ['All Stock Levels', ''],
+              ['In Stock', 'in_stock'],
+              ['Out of Stock', 'out_of_stock'],
+              ['Low Stock (≤5)', 'low_stock']
+            ], params[:stock_filter]), 
+            {}, { class: "form-select" } %>
+      </div>
+      <div class="col-md-3">
+        <div class="d-flex gap-2">
+          <%= f.submit "Filter", class: "btn btn-outline-primary" %>
+          <%= link_to "Reset", admin_products_path, class: "btn btn-outline-secondary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- Bulk Actions Form -->
+<%= form_with url: bulk_update_admin_products_path, method: :patch, local: true do |f| %>
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">Products List</h5>
+      <div class="d-flex gap-2 align-items-center">
+        <%= f.select :bulk_action, 
+            options_for_select([
+              ['Select Action...', ''],
+              ['Delete Selected', 'delete'],
+              ['Mark Out of Stock', 'mark_out_of_stock'],
+              ['Activate Selected', 'activate'],
+              ['Deactivate Selected', 'deactivate']
+            ]), 
+            {}, { class: "form-select form-select-sm", style: "width: 180px;" } %>
+        <%= f.submit "Apply", class: "btn btn-sm btn-warning", id: "bulk-action-btn", 
+            data: { confirm: "Are you sure you want to apply this action to selected products?" } %>
+      </div>
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-striped mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th style="width: 40px;">
+                <input type="checkbox" id="select-all" class="form-check-input">
+              </th>
+              <th style="width: 80px;">Image</th>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Status</th>
+              <th style="width: 120px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @products.any? %>
+              <% @products.each do |product| %>
+                <tr>
+                  <td>
+                    <%= check_box_tag "product_ids[]", product.id, false, 
+                        class: "form-check-input product-checkbox" %>
+                  </td>
+                  <td>
+                    <img src="<%= product.image_url %>" alt="<%= product.name %>" 
+                         style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
+                  </td>
+                  <td>
+                    <div>
+                      <strong><%= link_to product.name, admin_product_path(product), 
+                          class: "text-decoration-none" %></strong>
+                      <br>
+                      <small class="text-muted">Size: <%= product.size %></small>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge bg-info"><%= product.category.name %></span>
+                  </td>
+                  <td>
+                    <strong>$<%= product.price %></strong>
+                  </td>
+                  <td>
+                    <span class="badge bg-<%= product.stock_status_class %>">
+                      <%= product.stock_status %> (<%= product.stock %>)
+                    </span>
+                  </td>
+                  <td>
+                    <% if product.active? %>
+                      <span class="badge bg-success">Active</span>
+                    <% else %>
+                      <span class="badge bg-secondary">Inactive</span>
+                    <% end %>
+                  </td>
+                  <td>
+                    <div class="btn-group btn-group-sm">
+                      <%= link_to admin_product_path(product), class: "btn btn-outline-primary btn-sm" do %>
+                        <i class="fas fa-eye"></i>
+                      <% end %>
+                      <%= link_to edit_admin_product_path(product), class: "btn btn-outline-warning btn-sm" do %>
+                        <i class="fas fa-edit"></i>
+                      <% end %>
+                      <%= link_to admin_product_path(product), method: :delete,
+                          class: "btn btn-outline-danger btn-sm",
+                          data: { 
+                            turbo_method: :delete,
+                            turbo_confirm: "Are you sure you want to delete #{product.name}?" 
+                          } do %>
+                        <i class="fas fa-trash"></i>
+                      <% end %>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% else %>
+              <tr>
+                <td colspan="8" class="text-center py-5">
+                  <div class="text-muted">
+                    <i class="fas fa-box-open fa-3x mb-3"></i>
+                    <h5>No products found</h5>
+                    <p>Try adjusting your search criteria or <%= link_to "add a new product", new_admin_product_path %>.</p>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<!-- Pagination -->
+<% if @products.respond_to?(:total_pages) && @products.total_pages > 1 %>
+  <div class="d-flex justify-content-center mt-4">
+    <%= paginate @products, theme: 'bootstrap-5' %>
+  </div>
+<% end %>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all checkbox functionality
+  const selectAllCheckbox = document.getElementById('select-all');
+  const productCheckboxes = document.querySelectorAll('.product-checkbox');
+  const bulkActionBtn = document.getElementById('bulk-action-btn');
+
+  selectAllCheckbox.addEventListener('change', function() {
+    productCheckboxes.forEach(checkbox => {
+      checkbox.checked = this.checked;
+    });
+    toggleBulkActionButton();
+  });
+
+  productCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      const checkedBoxes = document.querySelectorAll('.product-checkbox:checked');
+      selectAllCheckbox.checked = checkedBoxes.length === productCheckboxes.length;
+      selectAllCheckbox.indeterminate = checkedBoxes.length > 0 && checkedBoxes.length < productCheckboxes.length;
+      toggleBulkActionButton();
+    });
+  });
+
+  function toggleBulkActionButton() {
+    const checkedBoxes = document.querySelectorAll('.product-checkbox:checked');
+    bulkActionBtn.disabled = checkedBoxes.length === 0;
+  }
+
+  // Initially disable bulk action button
+  toggleBulkActionButton();
+});
+</script>
+            <tr>
+              <td>
+                <img src="<%= product.image_url %>" alt="<%= product.name %>" style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
+              </td>
+              <td>
+                <strong><%= product.name %></strong><br>
+                <small class="text-muted"><%= truncate(product.description, length: 50) %></small>
+              </td>
+              <td><%= product.category.name %></td>
+              <td><span class="badge bg-secondary"><%= product.size %></span></td>
+              <td>$<%= product.price %></td>
+              <td>
+                <% if product.stock > 5 %>
+                  <span class="badge bg-success"><%= product.stock %></span>
+                <% elsif product.stock > 0 %>
+                  <span class="badge bg-warning"><%= product.stock %></span>
+                <% else %>
+                  <span class="badge bg-danger">Out of Stock</span>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to "View", admin_product_path(product), class: "btn btn-sm btn-outline-info" %>
+                <%= link_to "Edit", edit_admin_product_path(product), class: "btn btn-sm btn-outline-primary" %>
+                <%= link_to "Delete", admin_product_path(product), 
+                    data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this product?" },
+                    class: "btn btn-sm btn-outline-danger" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
+    <% if @products.respond_to?(:current_page) %>
+      <div class="d-flex justify-content-center mt-4">
+        <%= paginate @products %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+):
+1:    <% content_for :title, "Manage Products" %>
+2:    
+3:    <div class="d-flex justify-content-between align-items-center mb-4">
+4:      <h1>
+5:        <i class="fas fa-boxes me-2"></i>Manage Products 
+6:        <span class="badge bg-secondary"><%= @products.total_count %></span>
+7:      </h1>
+8:      <%= link_to "Add New Product", new_admin_product_path, class: "btn btn-primary" %>
+9:    </div>
+10:    
+11:    <!-- Advanced Filtering Form -->
+12:    <div class="card mb-4">
+13:      <div class="card-header">
+14:        <h5 class="mb-0">
+15:          <i class="fas fa-filter me-2"></i>Product Filters
+16:        </h5>
+17:      </div>
+18:      <div class="card-body">
+19:        <%= form_with url: admin_products_path, method: :get, local: true, class: "row g-3" do |f| %>
+20:          <div class="col-md-4">
+21:            <%= f.text_field :search, value: params[:search], placeholder: "Search products...", 
+22:                class: "form-control", id: "product-search" %>
+23:          </div>
+24:          <div class="col-md-3">
+25:            <%= f.collection_select :category_id, @categories, :id, :name, 
+26:                { prompt: "All Categories", selected: params[:category_id] }, 
+27:                { class: "form-select" } %>
+28:          </div>
+29:          <div class="col-md-2">
+30:            <%= f.select :stock_filter, 
+31:                options_for_select([
+32:                  ['All Stock Levels', ''],
+33:                  ['In Stock', 'in_stock'],
+34:                  ['Out of Stock', 'out_of_stock'],
+35:                  ['Low Stock (≤5)', 'low_stock']
+36:                ], params[:stock_filter]), 
+37:                {}, { class: "form-select" } %>
+38:          </div>
+39:          <div class="col-md-3">
+40:            <div class="d-flex gap-2">
+41:              <%= f.submit "Filter", class: "btn btn-outline-primary" %>
+42:              <%= link_to "Reset", admin_products_path, class: "btn btn-outline-secondary" %>
+43:            </div>
+44:          </div>
+45:        <% end %>
+46:      </div>
+47:    </div>
+48:    
+49:    <!-- Bulk Actions Form -->
+50:    <%= form_with url: bulk_update_admin_products_path, method: :patch, local: true do |f| %>
+51:      <div class="card">
+52:        <div class="card-header d-flex justify-content-between align-items-center">
+53:          <h5 class="mb-0">Products List</h5>
+54:          <div class="d-flex gap-2 align-items-center">
+55:            <%= f.select :bulk_action, 
+56:                options_for_select([
+57:                  ['Select Action...', ''],
+58:                  ['Delete Selected', 'delete'],
+59:                  ['Mark Out of Stock', 'mark_out_of_stock'],
+60:                  ['Activate Selected', 'activate'],
+61:                  ['Deactivate Selected', 'deactivate']
+62:                ]), 
+63:                {}, { class: "form-select form-select-sm", style: "width: 180px;" } %>
+64:            <%= f.submit "Apply", class: "btn btn-sm btn-warning", id: "bulk-action-btn", 
+65:                data: { confirm: "Are you sure you want to apply this action to selected products?" } %>
+66:          </div>
+67:        </div>
+68:        <div class="card-body p-0">
+69:          <div class="table-responsive">
+70:            <table class="table table-striped mb-0">
+71:              <thead class="table-dark">
+72:                <tr>
+73:                  <th style="width: 40px;">
+74:                    <input type="checkbox" id="select-all" class="form-check-input">
+75:                  </th>
+76:                  <th style="width: 80px;">Image</th>
+77:                  <th>Product</th>
+78:                  <th>Category</th>
+79:                  <th>Price</th>
+80:                  <th>Stock</th>
+81:                  <th>Status</th>
+82:                  <th style="width: 120px;">Actions</th>
+83:                </tr>
+84:              </thead>
+85:              <tbody>
+86:                <% if @products.any? %>
+87:                  <% @products.each do |product| %>
+88:                    <tr>
+89:                      <td>
+90:                        <%= check_box_tag "product_ids[]", product.id, false, 
+91:                            class: "form-check-input product-checkbox" %>
+92:                      </td>
+93:                      <td>
+94:                        <img src="<%= product.image_url %>" alt="<%= product.name %>" 
+95:                             style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
+96:                      </td>
+97:                      <td>
+98:                        <div>
+99:                          <strong><%= link_to product.name, admin_product_path(product), 
+100:                              class: "text-decoration-none" %></strong>
+101:                          <br>
+102:                          <small class="text-muted">Size: <%= product.size %></small>
+103:                        </div>
+104:                      </td>
+105:                      <td>
+106:                        <span class="badge bg-info"><%= product.category.name %></span>
+107:                      </td>
+108:                      <td>
+109:                        <strong>$<%= product.price %></strong>
+110:                      </td>
+111:                      <td>
+112:                        <span class="badge bg-<%= product.stock_status_class %>">
+113:                          <%= product.stock_status %> (<%= product.stock %>)
+114:                        </span>
+115:                      </td>
+116:                      <td>
+117:                        <% if product.active? %>
+118:                          <span class="badge bg-success">Active</span>
+119:                        <% else %>
+120:                          <span class="badge bg-secondary">Inactive</span>
+121:                        <% end %>
+122:                      </td>
+123:                      <td>
+124:                        <div class="btn-group btn-group-sm">
+125:                          <%= link_to admin_product_path(product), class: "btn btn-outline-primary btn-sm" do %>
+126:                            <i class="fas fa-eye"></i>
+127:                          <% end %>
+128:                          <%= link_to edit_admin_product_path(product), class: "btn btn-outline-warning btn-sm" do %>
+129:                            <i class="fas fa-edit"></i>
+130:                          <% end %>
+131:                          <%= link_to admin_product_path(product), method: :delete,
+132:                              class: "btn btn-outline-danger btn-sm",
+133:                              data: { 
+134:                                turbo_method: :delete,
+135:                                turbo_confirm: "Are you sure you want to delete #{product.name}?" 
+136:                              } do %>
+137:                            <i class="fas fa-trash"></i>
+138:                          <% end %>
+139:                        </div>
+140:                      </td>
+141:                    </tr>
+142:                  <% end %>
+143:                <% else %>
+144:                  <tr>
+145:                    <td colspan="8" class="text-center py-5">
+146:                      <div class="text-muted">
+147:                        <i class="fas fa-box-open fa-3x mb-3"></i>
+148:                        <h5>No products found</h5>
+149:                        <p>Try adjusting your search criteria or <%= link_to "add a new product", new_admin_product_path %>.</p>
+150:                      </div>
+151:                    </td>
+152:                  </tr>
+153:                <% end %>
+154:              </tbody>
+155:            </table>
+156:          </div>
+157:        </div>
+158:      </div>
+159:    <% end %>
+160:    
+161:    <!-- Pagination -->
+162:    <% if @products.respond_to?(:total_pages) && @products.total_pages > 1 %>
+163:      <div class="d-flex justify-content-center mt-4">
+164:        <%= paginate @products, theme: 'bootstrap-5' %>
+165:      </div>
+166:    <% end %>
+167:    
+168:    <script>
+169:    document.addEventListener('DOMContentLoaded', function() {
+170:      // Select all checkbox functionality
+171:      const selectAllCheckbox = document.getElementById('select-all');
+172:      const productCheckboxes = document.querySelectorAll('.product-checkbox');
+173:      const bulkActionBtn = document.getElementById('bulk-action-btn');
+174:    
+175:      selectAllCheckbox.addEventListener('change', function() {
+176:        productCheckboxes.forEach(checkbox => {
+177:          checkbox.checked = this.checked;
+178:        });
+179:        toggleBulkActionButton();
+180:      });
+181:    
+182:      productCheckboxes.forEach(checkbox => {
+183:        checkbox.addEventListener('change', function() {
+184:          const checkedBoxes = document.querySelectorAll('.product-checkbox:checked');
+185:          selectAllCheckbox.checked = checkedBoxes.length === productCheckboxes.length;
+186:          selectAllCheckbox.indeterminate = checkedBoxes.length > 0 && checkedBoxes.length < productCheckboxes.length;
+187:          toggleBulkActionButton();
+188:        });
+189:      });
+190:    
+191:      function toggleBulkActionButton() {
+192:        const checkedBoxes = document.querySelectorAll('.product-checkbox:checked');
+193:        bulkActionBtn.disabled = checkedBoxes.length === 0;
+194:      }
+195:    
+196:      // Initially disable bulk action button
+197:      toggleBulkActionButton();
+198:    });
+199:    </script>
+200:                <tr>
+201:                  <td>
+202:                    <img src="<%= product.image_url %>" alt="<%= product.name %>" style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
+203:                  </td>
+204:                  <td>
+205:                    <strong><%= product.name %></strong><br>
+206:                    <small class="text-muted"><%= truncate(product.description, length: 50) %></small>
+207:                  </td>
+208:                  <td><%= product.category.name %></td>
+209:                  <td><span class="badge bg-secondary"><%= product.size %></span></td>
+210:                  <td>$<%= product.price %></td>
+211:                  <td>
+212:                    <% if product.stock > 5 %>
+213:                      <span class="badge bg-success"><%= product.stock %></span>
+214:                    <% elsif product.stock > 0 %>
+215:                      <span class="badge bg-warning"><%= product.stock %></span>
+216:                    <% else %>
+217:                      <span class="badge bg-danger">Out of Stock</span>
+218:                    <% end %>
+219:                  </td>
+220:                  <td>
+221:                    <%= link_to "View", admin_product_path(product), class: "btn btn-sm btn-outline-info" %>
+222:                    <%= link_to "Edit", edit_admin_product_path(product), class: "btn btn-sm btn-outline-primary" %>
+223:                    <%= link_to "Delete", admin_product_path(product), 
+224:                        data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this product?" },
+225:                        class: "btn btn-sm btn-outline-danger" %>
+226:                  </td>
+227:                </tr>
+228:              <% end %>
+229:            </tbody>
+230:          </table>
+231:        </div>
+232:        
+233:        <% if @products.respond_to?(:current_page) %>
+234:          <div class="d-flex justify-content-center mt-4">
+235:            <%= paginate @products %>
+236:          </div>
+237:        <% end %>
+238:      </div>
+239:    </div>
+  
+app/views/admin/products/index.html.erb:242: syntax error, unexpected `end'
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/ywang/RailsEcommerceProject/app/views/admin/products/index.html.erb:242: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/admin/products/index.html.erb:242: syntax error, unexpected `end'
