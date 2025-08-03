@@ -32,20 +32,37 @@
             { prompt: "Select a category" }, { class: "form-select" } %>
       </div>
 
-      <div class="col-md-4">
-        <%= f.label :price, class: "form-label" %>
+      <div class="col-md-3">
+        <%= f.label :price, "Regular Price", class: "form-label" %>
         <div class="input-group">
           <span class="input-group-text">$</span>
           <%= f.number_field :price, step: :any, class: "form-control" %>
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3">
+        <%= f.label :sale_price, "Sale Price", class: "form-label" %>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <%= f.number_field :sale_price, step: :any, class: "form-control" %>
+        </div>
+        <div class="form-text">Leave empty if not on sale</div>
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">&nbsp;</label>
+        <div class="form-check">
+          <%= f.check_box :on_sale, class: "form-check-input" %>
+          <%= f.label :on_sale, "On Sale", class: "form-check-label" %>
+        </div>
+      </div>
+
+      <div class="col-md-2">
         <%= f.label :size, class: "form-label" %>
         <%= f.text_field :size, class: "form-control" %>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-2">
         <%= f.label :stock, class: "form-label" %>
         <%= f.number_field :stock, class: "form-control" %>
       </div>

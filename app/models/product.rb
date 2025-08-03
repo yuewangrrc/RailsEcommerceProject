@@ -17,6 +17,9 @@ class Product < ApplicationRecord
   scope :in_stock, -> { where('stock > 0') }
   scope :out_of_stock, -> { where(stock: 0) }
   scope :low_stock, -> { where('stock > 0 AND stock <= 5') }
+  scope :on_sale, -> { where(on_sale: true) }
+  scope :new_products, -> { where('created_at >= ?', 3.days.ago) }
+  scope :recently_updated, -> { where('updated_at >= ? AND created_at < ?', 3.days.ago, 3.days.ago) }
   scope :by_category, ->(category_id) { where(category_id: category_id) if category_id.present? }
   scope :search_by_text, ->(query) { where("name ILIKE ? OR description ILIKE ?", "%#{query}%", "%#{query}%") if query.present? }
 
@@ -39,6 +42,23 @@ class Product < ApplicationRecord
     return 'danger' if stock == 0
     return 'warning' if low_stock?
     'success'
+  end
+
+  def new_product?
+    created_at >= 3.days.ago
+  end
+
+  def recently_updated?
+    updated_at >= 3.days.ago && created_at < 3.days.ago
+  end
+
+  def current_price
+    on_sale? && sale_price.present? ? sale_price : price
+  end
+
+  def discount_percentage
+    return 0 unless on_sale? && sale_price.present? && price > sale_price
+    ((price - sale_price) / price * 100).round
   end
 
   # Image methods
