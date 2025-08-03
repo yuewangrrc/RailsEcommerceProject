@@ -1,0 +1,87 @@
+<% content_for :title, "Products - Swimi" %>
+
+<div class="container py-4">
+  <!-- Page Header and Search -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <h1>
+        <% if @current_category %>
+          <%= @current_category.name %>
+        <% else %>
+          All Products
+        <% end %>
+      </h1>
+    </div>
+    <div class="col-md-6">
+      <%= form_with url: search_products_path, method: :get, local: true, class: "d-flex" do |f| %>
+        <%= f.text_field :search, placeholder: "Search products...", 
+                        value: params[:search], class: "form-control me-2" %>
+        <%= f.select :category, options_from_collection_for_select(@categories, :name, :name, params[:category]),
+                    { prompt: "All Categories" }, { class: "form-select me-2" } %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Results info -->
+  <% if params[:search].present? || params[:category].present? %>
+    <div class="alert alert-info">
+      <% if params[:search].present? && params[:category].present? %>
+        Showing results for "<strong><%= params[:search] %></strong>" in category "<strong><%= params[:category] %></strong>"
+      <% elsif params[:search].present? %>
+        Showing results for "<strong><%= params[:search] %></strong>"
+      <% else %>
+        Showing products in category "<strong><%= params[:category] %></strong>"
+      <% end %>
+      (<%= @products.total_count %> products found)
+      <%= link_to "Clear filters", products_path, class: "btn btn-sm btn-outline-secondary ms-2" %>
+    </div>
+  <% end %>
+
+  <!-- Products Grid -->
+  <div class="row">
+    <% if @products.any? %>
+      <% @products.each do |product| %>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card product-card h-100">
+            <img src="<%= product.image_url %>" class="card-img-top product-image" alt="<%= product.name %>">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title"><%= product.name %></h5>
+              <p class="card-text flex-grow-1">
+                <small class="text-muted"><%= product.category.name %></small><br>
+                Size: <%= product.size %><br>
+                <%= truncate(product.description, length: 80) %>
+              </p>
+              <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="price">$<%= product.price %></span>
+                  <% if product.stock > 0 %>
+                    <small class="text-success">In Stock (<%= product.stock %>)</small>
+                  <% else %>
+                    <small class="text-danger">Out of Stock</small>
+                  <% end %>
+                </div>
+                <%= link_to "View Details", product_path(product), class: "btn btn-primary w-100" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="col-12">
+        <div class="text-center py-5">
+          <h3>No products found</h3>
+          <p class="text-muted">Try adjusting your search terms or browse all products.</p>
+          <%= link_to "View All Products", products_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Pagination -->
+  <% if @products.respond_to?(:current_page) %>
+    <div class="d-flex justify-content-center mt-4">
+      <%= paginate @products %>
+    </div>
+  <% end %>
+</div>

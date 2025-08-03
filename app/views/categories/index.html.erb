@@ -1,0 +1,30 @@
+<% content_for :title, "Categories - Swimi" %>
+
+<div class="container py-4">
+  <h1 class="mb-4">Product Categories</h1>
+  
+  <div class="row">
+    <% @categories.each do |category| %>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <h3 class="card-title text-primary"><%= category.name %></h3>
+            <p class="card-text">
+              <strong><%= category.products.count %></strong> products available
+            </p>
+            <p class="card-text text-muted">
+              Discover our collection of <%= category.name.downcase %> designed for comfort and style.
+            </p>
+            <%= link_to "Browse Products", category_path(category), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  
+  <div class="text-center mt-5">
+    <h3>Can't find what you're looking for?</h3>
+    <p class="text-muted">Browse all our products or use our search feature.</p>
+    <%= link_to "View All Products", products_path, class: "btn btn-outline-primary btn-lg" %>
+  </div>
+</div>

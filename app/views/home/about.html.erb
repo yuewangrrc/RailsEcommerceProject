@@ -1,0 +1,82 @@
+<% content_for :title, "About - Swimi" %>
+
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <h1 class="text-center mb-5">About Swimi</h1>
+      
+      <div class="mb-5">
+        <h3>Our Story</h3>
+        <p>Swimi is your premier destination for high-quality swimwear for the entire family. Founded with a passion for aquatic lifestyle, we've been providing swimmers, beach-goers, and water sports enthusiasts with the best swimwear since our inception.</p>
+        
+        <p>Whether you're looking for competitive swimwear, casual beachwear, or fun kids' designs, our curated collection ensures that everyone can find their perfect fit and style.</p>
+      </div>
+
+      <div class="mb-5">
+        <h3>Our Data Sources</h3>
+        <p>This Rails application demonstrates the integration of multiple data sources as part of an academic project:</p>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">1. Manual Data Entry</h5>
+                <p class="card-text">Product categories are manually curated to ensure quality and organization.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">2. Faker Gem</h5>
+                <p class="card-text">User accounts and product descriptions are generated using the Faker gem for realistic test data.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">3. Structured Product Data</h5>
+                <p class="card-text">Swimwear products are populated from a structured dataset including various sizes and categories.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">4. Relational Data</h5>
+                <p class="card-text">Sample orders and order items demonstrate many-to-many relationships between users, products, and orders.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-5">
+        <h3>Our Categories</h3>
+        <div class="row">
+          <% @categories.each do |category| %>
+            <div class="col-md-6 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><%= category.name %></h5>
+                  <p class="card-text">Explore our <%= category.products.count %> products in this category.</p>
+                  <%= link_to "Browse", category_path(category), class: "btn btn-primary btn-sm" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h3>Ready to Dive In?</h3>
+        <p>Explore our collection and find your perfect swimwear today!</p>
+        <%= link_to "Start Shopping", products_path, class: "btn btn-primary btn-lg" %>
+      </div>
+    </div>
+  </div>
+</div>
